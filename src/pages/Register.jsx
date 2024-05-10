@@ -21,18 +21,18 @@ const Register = () => {
         const password = e.target.password.value;
         const conf = e.target['conf-password'].value;
 
-        console.log(name, email, url, password, conf);
+        // console.log(name, email, url, password, conf);
 
-        // createUser(email, password)
-        //     .then(res => {
-        //         console.log("local : ", res.user);
-        //         console.log("from observer: ", user);
-        //         addNameUrl(name, url);
-        //         navigate('/');
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
+        createUser(email, password)
+            .then(res => {
+                console.log("local : ", res.user);
+                console.log("from observer: ", user);
+                addNameUrl(name, url);
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     const handleGoogle = () => {

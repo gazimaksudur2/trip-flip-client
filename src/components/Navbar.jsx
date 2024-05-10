@@ -12,7 +12,7 @@ const Navbar = () => {
         logOut()
             .then(console.log('loggout successfully!!!'))
             .catch(console.log('error Occured!!'));
-        navigate('/');
+        navigate('/authenticate/login');
     }
 
     const avatar = (<label htmlFor="my-drawer-4" className="drawer-button avatar">

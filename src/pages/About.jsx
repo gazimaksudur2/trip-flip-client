@@ -1,9 +1,11 @@
-import React from 'react';
+import Features from '../components/About_Contacts/Features';
+import Teams from '../components/About_Contacts/Teams';
 
 const About = () => {
     return (
-        <div>
-            <h2 className='text-2xl font-semibold font-source'>This is from about.</h2>
+        <div className='w-[90%] mx-auto flex flex-col justify-between'>
+            <Teams/>
+            <Features/>
         </div>
     );
 };

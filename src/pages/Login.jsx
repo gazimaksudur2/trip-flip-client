@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
-    const reg_here = "Don't have an Account?";const { user, signIn, googleSignIn, githubSignIn, twitterSignIn } = useContext(AuthContext);
+    const reg_here = "Don't have an Account?";const { signIn, googleSignIn, githubSignIn, twitterSignIn } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const navigate = useNavigate();
 
@@ -20,8 +20,7 @@ const Login = () => {
 
         signIn(email, password)
         .then(res=>{
-            console.log("local : ",res.user);
-            console.log("from observer: ",user);
+            // console.log("local : ",res.user);
             navigate('/');
         })
         .catch(error=>{
