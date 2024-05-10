@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, onAuthStat
 import { createContext, useEffect, useState } from 'react';
 import app from './FirebaseConfig';
 import { GoogleAuthProvider, TwitterAuthProvider } from 'firebase/auth';
+import axios from 'axios';
 
 const auth = getAuth(app);
 export const AuthContext = createContext();
@@ -53,9 +54,27 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, curUser=>{
-            setUser(curUser);
+            const loggedUser = {email: user?.email || curUser?.email};
             setLoading(false);
-            // console.log("from observer: ", curUser);
+            console.log("from observer: ", loggedUser);
+            if(curUser){
+                axios.post('http://localhost:5000/jwt', loggedUser, {withCredentials: true})
+                .then(res=> {
+                    console.log(res.data);
+                })
+                .catch(error=> {
+                    console.log(error);
+                })
+            }else{
+                axios.post('http://localhost:5000/logout', loggedUser, {withCredentials: true})
+                .then(res=> {
+                    console.log(res.data);
+                })
+                .catch(error=>{
+                    console.log(error);
+                })
+            }
+            setUser(curUser);
         })
 
         return ()=>{
