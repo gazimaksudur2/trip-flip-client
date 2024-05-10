@@ -5,12 +5,39 @@ import Login from '../pages/Login';
 import LoadingSkeleton from '../pages/LoadingSkeleton';
 import Register from '../pages/Register';
 import Authenticate from '../layout/Authenticate';
+import Home from '../pages/Home';
+import Rooms from '../pages/Rooms';
+import MyBookings from '../pages/MyBookings';
+import Contacts from '../pages/Contacts';
+import About from '../pages/About';
 
 const Router = createBrowserRouter([
     {
         path: '/',
         errorElement: <NotFound/>,
-        element: <MainLayout/>
+        element: <MainLayout/>,
+        children: [
+            {
+                index: true,
+                element: <Home/>,
+            },
+            {
+                path: '/rooms',
+                element: <Rooms/>,
+            },
+            {
+                path: '/bookings',
+                element: <MyBookings/>,
+            },
+            {
+                path: '/contacts',
+                element: <Contacts/>,
+            },
+            {
+                path: '/about',
+                element: <About/>,
+            }
+        ]
     },
     {
         path: '/authenticate',

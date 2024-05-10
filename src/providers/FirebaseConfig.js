@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBeLAh5QSQBnu41ByaG3xNSRO5zypkQYvo",
-  authDomain: "trip-flip.firebaseapp.com",
-  projectId: "trip-flip",
-  storageBucket: "trip-flip.appspot.com",
-  messagingSenderId: "763292311080",
-  appId: "1:763292311080:web:c21fc0fb2a0d2aa9a55f1d"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
