@@ -7,6 +7,7 @@ const Register = () => {
     const reg_here = "Don't have an Account?";
     const { user, createUser, addNameUrl, googleSignIn, githubSignIn, twitterSignIn } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
+    const [showConfPass, setShowConfPass] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = e => {
@@ -18,19 +19,20 @@ const Register = () => {
         const email = e.target.email.value;
         const url = e.target.url.value;
         const password = e.target.password.value;
+        const conf = e.target['conf-password'].value;
 
-        // console.log(name, email, url, password);
+        console.log(name, email, url, password, conf);
 
-        createUser(email, password)
-        .then(res=>{
-            console.log("local : ",res.user);
-            console.log("from observer: ",user);
-            addNameUrl(name, url);
-            navigate('/');
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+        // createUser(email, password)
+        //     .then(res => {
+        //         console.log("local : ", res.user);
+        //         console.log("from observer: ", user);
+        //         addNameUrl(name, url);
+        //         navigate('/');
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     })
     }
 
     const handleGoogle = () => {
@@ -68,7 +70,7 @@ const Register = () => {
 
     const tractPrivate = str => {
         // console.log(str);
-        
+
         navigate(str);
     }
 
@@ -97,10 +99,17 @@ const Register = () => {
                                 <input className="block w-full px-4 py-2 text-gray-700 placeholder-gray-400 bg-white border rounded-md -800 -600 -500 focus:border-blue-400 -blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type="text" placeholder="User Name" aria-label="User Name" name="user" required />
                                 <input className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md -800 -600 -500 focus:border-blue-400 -blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type="email" placeholder="Email address" aria-label="Email address" name="email" required />
                                 <input className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md -800 -600 -500 focus:border-blue-400 -blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type="text" placeholder="Photo URL" aria-label="URL" name="url" required />
-                                <div className="relative ">
-                                    <input className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md -800 -600 -500 focus:border-blue-400 -blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type={showPass?'text':'password'} placeholder="Password" aria-label="Password" name="password" required />
-                                    <FaEyeSlash onClick={()=>setShowPass(false)} className={`absolute bottom-[25%] right-[5%] `+(showPass?'':'hidden')} size={21} />
-                                    <FaEye  onClick={()=>setShowPass(true)} className={`absolute bottom-[25%] right-[5%] `+(showPass?'hidden':'')} size={20} />
+                                <div className="flex justify-center items-center gap-3">
+                                    <div className="relative ">
+                                        <input className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md -800 -600 -500 focus:border-blue-400 -blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type={showPass ? 'text' : 'password'} placeholder="Password" aria-label="Password" name="password" required />
+                                        <FaEyeSlash onClick={() => setShowPass(false)} className={`absolute bottom-[25%] right-[5%] text-gray-500 ` + (showPass ? '' : 'hidden')} size={15} />
+                                        <FaEye onClick={() => setShowPass(true)} className={`absolute bottom-[25%] right-[5%] text-gray-500 ` + (showPass ? 'hidden' : '')} size={15} />
+                                    </div>
+                                    <div className="relative ">
+                                        <input className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md -800 -600 -500 focus:border-blue-400 -blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type={showConfPass ? 'text' : 'password'} placeholder="Confirm Password" aria-label="Password" name="conf-password" required />
+                                        <FaEyeSlash onClick={() => setShowConfPass(false)} className={`absolute bottom-[25%] right-[5%] text-gray-500 ` + (showConfPass ? '' : 'hidden')} size={15} />
+                                        <FaEye onClick={() => setShowConfPass(true)} className={`absolute bottom-[25%] right-[5%] text-gray-500 ` + (showConfPass ? 'hidden' : '')} size={15} />
+                                    </div>
                                 </div>
                             </div>
 

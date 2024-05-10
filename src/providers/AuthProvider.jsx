@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import app from './FirebaseConfig';
 import { GoogleAuthProvider, TwitterAuthProvider } from 'firebase/auth';
@@ -47,6 +47,10 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, twitterProvider);
     }
 
+    const logOut = ()=>{
+        return signOut(auth);
+    }
+
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, curUser=>{
             setUser(curUser);
@@ -68,7 +72,8 @@ const AuthProvider = ({children}) => {
         setLoading,
         googleSignIn,
         githubSignIn,
-        twitterSignIn
+        twitterSignIn,
+        logOut
     }
 
     return (
