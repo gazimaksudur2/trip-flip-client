@@ -16,6 +16,7 @@ const Rooms = () => {
             })
     }, [user]);
     console.log(rooms);
+    
     return (
         <div>
             <h2 className='text-2xl font-semibold font-source'>This is from rooms</h2>
