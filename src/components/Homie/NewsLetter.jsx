@@ -6,7 +6,7 @@ const NewsLetter = () => {
                 <nav className="border-t-4 border-blue-500">
                 </nav>
 
-                <div className="container px-6 py-16 mx-auto">
+                <div className="container w-[80%] px-6 py-16 mx-auto">
                     <div className="items-center lg:flex">
                         <div className="w-full lg:w-1/2">
                             <div className="lg:max-w-lg">

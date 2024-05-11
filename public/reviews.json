@@ -1,0 +1,69 @@
+[
+    {
+      "customer_id": 1,
+      "customer_name": "John Smith",
+      "contacts": "john@example.com, (123) 456-7890",
+      "address": "123 Main Street, Anytown, USA",
+      "review": "Absolutely thrilled with the service! The team went above and beyond to help me find the perfect home for my family.",
+      "rating": 5,
+      "date": "2024-04-15",
+      "type": "elite",
+      "imageurl": "data:image/jpeg;base64,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"
+    },
+    {
+      "customer_id": 2,
+      "customer_name": "Alice Johnson",
+      "contacts": "alice@example.com, (234) 567-8901",
+      "address": "456 Elm Street, Otherville, USA",
+      "review": "Professional and efficient! They made the entire home buying process smooth and stress-free. Highly recommended.",
+      "rating": 4.5,
+      "date": "2024-04-14",
+      "type": "regular",
+      "imageurl": "https://images.unsplash.com/photo-1615109398623-88346a601842?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hbnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "customer_id": 3,
+      "customer_name": "Michael Brown",
+      "contacts": "michael@example.com, (345) 678-9012",
+      "address": "789 Oak Avenue, Anycity, USA",
+      "review": "Excellent service from start to finish. The team listened to my needs and found me the perfect investment property.",
+      "rating": 4.8,
+      "date": "2024-04-13",
+      "type": "elite",
+      "imageurl": "https://images.unsplash.com/photo-1557862921-37829c790f19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fHww"
+    },
+    {
+      "customer_id": 4,
+      "customer_name": "Emily Davis",
+      "contacts": "emily@example.com, (456) 789-0123",
+      "address": "321 Pine Road, Somewhere, USA",
+      "review": "Couldn't be happier with my experience. The staff was friendly, knowledgeable, and always available to answer my questions.",
+      "rating": 4.7,
+      "date": "2024-04-12",
+      "type": "new",
+      "imageurl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "customer_id": 5,
+      "customer_name": "Daniel Martinez",
+      "contacts": "daniel@example.com, (567) 890-1234",
+      "address": "567 Maple Lane, Anyville, USA",
+      "review": "Great communication throughout the process. They made sure I understood every step of the home buying journey.",
+      "rating": 4.5,
+      "date": "2024-04-11",
+      "type": "regular",
+      "imageurl": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fHww"
+    },
+    {
+      "customer_id": 6,
+      "customer_name": "Sarah Taylor",
+      "contacts": "sarah@example.com, (678) 901-2345",
+      "address": "890 Walnut Boulevard, Anyplace, USA",
+      "review": "Professional and friendly staff. They helped me find the perfect rental property in no time.",
+      "rating": 4.9,
+      "date": "2024-04-10",
+      "type": "elite",
+      "imageurl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  ]
+  
