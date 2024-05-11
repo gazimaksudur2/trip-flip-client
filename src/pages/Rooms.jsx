@@ -1,13 +1,17 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import RoomHeader from "../components/Rooms/RoomHeader";
+import { ScrollRestoration } from "react-router-dom";
+import RoomCard from "../components/Rooms/RoomCard";
 
 const Rooms = () => {
     const { user } = useContext(AuthContext);
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/rooms?email=${user?.email}&&name=${user?.displayName}`, { withCredentials: true })
+        // axios.get(`http://localhost:5000/rooms?email=${user?.email}&&name=${user?.displayName}`, { withCredentials: true })
+        axios.get('http://localhost:5000/rooms', { withCredentials: true })
             .then(res => {
                 setRooms(res.data);
             })
@@ -18,9 +22,20 @@ const Rooms = () => {
     console.log(rooms);
     
     return (
-        <div>
-            <h2 className='text-2xl font-semibold font-source'>This is from rooms</h2>
-            <p>Total Existing room is : {rooms.length}</p>
+        <div className="py-8">
+            <ScrollRestoration/>
+            <RoomHeader/>
+            <p className="text-center py-5">Total Existing room is : {rooms.length}</p>
+            <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <RoomCard/>
+                <RoomCard/>
+                <RoomCard/>
+                <RoomCard/>
+                <RoomCard/>
+                <RoomCard/>
+                <RoomCard/>
+                <RoomCard/>
+            </div>
         </div>
     );
 };

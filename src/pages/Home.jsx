@@ -1,3 +1,4 @@
+import { ScrollRestoration } from 'react-router-dom';
 import BannerTop from '../components/Homie/BannerTop';
 import Carousel from '../components/Homie/Carousel';
 import FeaturedRooms from '../components/Homie/FeaturedRooms';
@@ -8,11 +9,12 @@ import Reviews from '../components/Homie/Reviews';
 const Home = () => {
     return (
         <div>
+            <ScrollRestoration/>
             <BannerTop/>
-            <HotelLocations/>
             <Carousel/>
             <FeaturedRooms/>
             <Reviews/>
+            <HotelLocations/>
             <NewsLetter/>
         </div>
     );

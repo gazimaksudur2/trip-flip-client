@@ -1,6 +1,7 @@
+
 const FeatureRoomCard = ({content}) => {
     return (
-        <div>
+        <div className="">
             <div className="block rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white text-surface">
                 <div className="relative overflow-hidden bg-cover bg-no-repeat">
                     <img className="rounded-t-lg w-full h-[20rem]" src={content.url} alt="" />

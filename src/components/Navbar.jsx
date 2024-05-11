@@ -104,7 +104,7 @@ const Navbar = () => {
     </>)
 
     return (
-        <div>
+        <div className="">
             <section className="bg-gray-900">
                 <nav className="w-full px-10 py-6 mx-auto lg:flex lg:justify-between lg:items-center">
                     <div className="flex items-center justify-between">
