@@ -126,21 +126,21 @@ const SingleRoom = () => {
             {showBookModal ? (
                 <>
                     <div
-                        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 backdrop-blur-sm outline-none focus:outline-none"
                     >
-                        <div className="relative w-[90%] h-[70vh] my-6 mx-auto max-w-3xl shadow-lg">
+                        <div className="relative min-h-full w-[90%] flex flex-col justify-center my-6 mx-auto max-w-3xl shadow-lg">
                             {/*content*/}
-                            <div className="border-0 rounded-t-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            <div className="border-0 rounded-t-lg h-[70vh] relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 {/*header*/}
                                 <div className="flex items-start justify-between pt-4 px-4 pb-2 border-b border-solid border-blueGray-200 rounded-t">
                                     <h3 className="font-semibold">
                                         Book your room at <span className="pl-4 text-3xl text-primary">Seaside Bungalow</span>
                                     </h3>
                                     <button
-                                        className="p-1 ml-auto bg-green-400 border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        className="p-1 z-[1000] ml-auto border-0 text-black opacity-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                                         onClick={() => setShowBookModal(false)}
                                     >
-                                        <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                        <span className="text-black h-6 w-6 opacity-50 text-2xl block outline-none focus:outline-none">
                                             ×
                                         </span>
                                     </button>
@@ -164,7 +164,7 @@ const SingleRoom = () => {
                                         <div className="flex justify-center gap-6">
                                             <label className="form-control w-full">
                                                 <div className="label">
-                                                    <span className="label-text">Travelers </span>
+                                                    <span className="label-text">Travelers Choice</span>
                                                 </div>
                                                 <select className="select select-bordered">
                                                     <option disabled selected>Pick one</option>
@@ -198,7 +198,7 @@ const SingleRoom = () => {
                                             <div className="confirm-box py-4 flex flex-col justify-center lg:justify-between items-center gap-4">
                                                 <div className="flex justify-start items-center w-full gap-[30%]">
                                                     <h3 className="font-semibold ">Room <span className="bg-green-500 text-white p-1 rounded-full">0</span></h3>
-                                                    <p className="text-gray-700 font-medium">Per Room Price : <span className="text-green-500 font-bold text-2xl">$340</span></p>
+                                                    <p className="text-gray-700 font-medium">Each Room for Per Day Fare : <span className="text-green-500 font-bold text-2xl">$340</span></p>
                                                 </div>
                                                 <div className="w-full flex flex-col justify-between items-start">
                                                     <h3 className="font-semibold text-gray-600 text-lg">Choose Any Special Offer</h3>
