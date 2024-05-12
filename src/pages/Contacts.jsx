@@ -1,4 +1,3 @@
-import React from 'react';
 import VisitStores from '../components/contacts_comps/VisitStores';
 import GetInTouch from '../components/contacts_comps/GetInTouch';
 // import SwiperSlider from '../components/Rooms/SwiperSlider';
@@ -7,12 +6,11 @@ import GetInTouch from '../components/contacts_comps/GetInTouch';
 const Contacts = () => {
     return (
         <div>
-            <h2 className='text-2xl font-semibold font-source'>This is from Contacts</h2>
-            <div className='py-10'>
+            <div className='py-2 w-[90%] mx-auto'>
                 {/* <SwiperSlider /> */}
                 {/* <MySlider/> */}
-                {/* <VisitStores/> */}
-                {/* <GetInTouch/> */}
+                <VisitStores/>
+                <GetInTouch/>
             </div>
         </div>
     );
