@@ -6,7 +6,7 @@ const MyBookings = () => {
         <div>
             <h2 className='text-2xl font-semibold font-source'>This is from My MyBookings</h2>
             <div className='w-full h-[60vh]'>
-                <SwiperSlider />
+                {/* <SwiperSlider /> */}
             </div>
         </div>
     );
