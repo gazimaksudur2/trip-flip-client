@@ -76,14 +76,13 @@ const Register = () => {
 
     return (
         <div className="flex flex-col items-center py-6 lg:h-[36rem] lg:flex-row">
-            <div className="lg:w-1/2">
-                <h2 className="text-3xl font-semibold text-gray-100 lg:text-4xl">Brand</h2>
+            <div className="lg:w-[40%]">
 
                 <h3 className="mt-2 text-2xl font-semibold text-gray-100">
-                    Hello <span className="text-blue-400">Guest</span> This is register
+                    Hello <span className="text-blue-400">Guest</span> Join Us Today!
                 </h3>
 
-                <p className="mt-4 text-gray-100">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum modi incidunt adipisci quod porro et non exercitationem quasi, maxime culpa ut nemo ab delectus saepe iste nostrum explicabo a?</p>
+                <p className="mb-5 mt-3 text-gray-100">Join our hotel today and unlock a world of convenience and luxury. Sign up now to create your account, enjoy seamless booking experiences, and gain access to exclusive perks and rewards. Start your journey with us!</p>
                 <Link to={'/'} className=''>
                     <button className="btn btn-primary">Go Back Home</button>
                 </Link>
@@ -130,7 +129,7 @@ const Register = () => {
                                 <button onClick={handleGithub} className="btn text-white flex justify-center items-center gap-2 bg-[#171515]"><FaGithub size={20} /> Github</button>
                                 <button onClick={handleTwitter} className="btn text-white flex justify-center items-center gap-2 bg-blue-600"><FaTwitter size={20} /> Twitter</button>
                             </div>
-                            <p className="">{reg_here}<button onClick={() => tractPrivate('/authenticate/login')} className="text-blue-600 hover:underline hover:cursor-pointer">Register here</button></p>
+                            <p className="">{reg_here}<button onClick={() => tractPrivate('/authenticate/login')} className="text-blue-600 hover:underline hover:cursor-pointer">Login here</button></p>
                         </div>
                     </div>
                 </div>

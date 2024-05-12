@@ -1,5 +1,14 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
+import Slider from './Slider';
 import ReviewCard from './ReviewCard';
+import ReviewTestimonial from './ReviewTestimonial';
 
 const Reviews = () => {
     const [data, setData] = useState();
@@ -13,17 +22,42 @@ const Reviews = () => {
     // console.log(data);
     return (
         <div>
-            <section className="lg:py-12 lg:w-[60%] mx-auto font-ubuntu">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-semibold text-center mb-6 font-jakarta">What People Are Saying</h2>
+            <section className="relative lg:py-10 lg:w-[80%] mx-auto">
+                <div className="lg:w-[60%] container mx-auto px-4">
+                    <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
+                        What clients saying
+                    </h1>
+                    <div className="flex justify-center mx-auto mt-2 mb-5">
+                        <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
+                        <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
+                        <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+                    </div>
                     <p className="text-gray-700 font-normal font-source text-center mb-8">Discover why our customers love us! Read real reviews and testimonials from satisfied clients who have experienced our exceptional service and found their dream properties. From first-time visitors to seasoned travelers, our dedication to customer satisfaction shines through in every interaction.</p>
                 </div>
-            </section>
-            <div className='w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10'>
+                <div className='h-[50vh] w-full'>
+                    <Swiper
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        loop={true}
+                        modules={[Pagination]}
+                        className="mySwiper w-full h-full bg-white rounded-3xl"
+                    >
+                        {
+                            data && data?.map(each => (<SwiperSlide key={each.id} className='relative'>
+                                <ReviewTestimonial />
+                            </SwiperSlide>))
+                        }
+                    </Swiper>
+                </div>
+                {/* <div className='w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10'>
                 {
                     data && data.map((dat, idx) => (<ReviewCard key={idx} data={dat} />))
                 }
-            </div>
+            </div> */}
+            </section >
         </div>
     );
 };
