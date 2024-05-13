@@ -5,6 +5,7 @@ const BookingTable = () => {
     const room_title = 'Deluxe Room with Ocean View';
     const room_description = "this is a demo room description for my test case generation.";
     const room_category = 'premium';
+    const room_package = '2rooms, 2days';
     const fare = 320;
     const bookedDate = '20-05-2024';
     const checkInDate = '20-05-2024';
@@ -60,7 +61,11 @@ const BookingTable = () => {
                                                     <span>Booked Room</span>
                                                 </div>
                                             </th>
-
+                                            <th scope="col" className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 -400">
+                                                <button className="flex items-center gap-x-2">
+                                                    <span>Selected Packages</span>
+                                                </button>
+                                            </th>
                                             <th scope="col" className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 -400">
                                                 <button className="flex items-center gap-x-2">
                                                     <span>Category</span>
@@ -93,6 +98,11 @@ const BookingTable = () => {
                                                             <p className="text-sm font-normal text-gray-600 -400">{(room_description.slice(0, 20) + "....")}</p>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </td>
+                                            <td className="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-amber-100/60">
+                                                    <h2 className="text-sm font-normal text-amber-500">{room_package}</h2>
                                                 </div>
                                             </td>
                                             <td className="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">

@@ -25,7 +25,10 @@ const Rooms = () => {
         <div className="py-8">
             <ScrollRestoration/>
             <RoomHeader/>
+
+            {/* Implement here filter functionality like the windows settings application filter */}
             <p className="text-center py-5">Total Existing room is : {rooms.length}</p>
+            <p className="text-center py-5">Filter your rooms for your own price range.</p>
             <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <RoomCard/>
                 <RoomCard/>

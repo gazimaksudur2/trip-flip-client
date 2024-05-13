@@ -6,8 +6,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
-import Slider from './Slider';
-import ReviewCard from './ReviewCard';
+// import Slider from './Slider';
+// import ReviewCard from './ReviewCard';
 import ReviewTestimonial from './ReviewTestimonial';
 
 const Reviews = () => {
@@ -32,7 +32,7 @@ const Reviews = () => {
                         <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
                         <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
                     </div>
-                    <p className="text-gray-700 font-normal font-source text-center mb-8">Discover why our customers love us! Read real reviews and testimonials from satisfied clients who have experienced our exceptional service and found their dream properties. From first-time visitors to seasoned travelers, our dedication to customer satisfaction shines through in every interaction.</p>
+                    <p className="text-gray-700 font-normal font-source text-center mb-8">Discover why our customers love us! Read real reviews and testimonials from satisfied clients who have experienced our exceptional service and found their dream properties.</p>
                 </div>
                 <div className='h-[50vh] w-full'>
                     <Swiper
