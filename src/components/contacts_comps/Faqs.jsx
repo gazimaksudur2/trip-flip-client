@@ -11,7 +11,7 @@ const Faqs = () => {
             setFaqInfo(data);
         })
     },[]);
-    console.log(faqInfo);
+    // console.log(faqInfo);
 
     return (
         <div>

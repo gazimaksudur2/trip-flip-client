@@ -20,8 +20,8 @@ const GetInTouch = () => {
                             </span>
 
                             <h2 className="mt-4 text-lg font-medium text-gray-800 ">Email</h2>
-                            <p className="mt-2 text-gray-500">Our friendly team is here to help.</p>
-                            <p className="mt-2 text-blue-500">hello@merakiui.com</p>
+                            <p className="mt-2 text-gray-500">Our friendly team is here to help you.</p>
+                            <p className="mt-2 text-blue-500">instructors@tripflip.com</p>
                         </div>
 
                         <div className="flex flex-col items-center justify-center text-center">
@@ -32,9 +32,9 @@ const GetInTouch = () => {
                                 </svg>
                             </span>
 
-                            <h2 className="mt-4 text-lg font-medium text-gray-800 ">Office</h2>
+                            <h2 className="mt-4 text-lg font-medium text-gray-800 ">Head Office</h2>
                             <p className="mt-2 text-gray-500">Come say hello at our office HQ.</p>
-                            <p className="mt-2 text-blue-500">100 Smith Street Collingwood VIC 3066 AU</p>
+                            <p className="mt-2 text-blue-500">12/A, D Block, Shahjalal Upashahar, Sylhet Sadar</p>
                         </div>
 
                         <div className="flex flex-col items-center justify-center text-center">
@@ -46,7 +46,7 @@ const GetInTouch = () => {
 
                             <h2 className="mt-4 text-lg font-medium text-gray-800 ">Phone</h2>
                             <p className="mt-2 text-gray-500">Mon-Fri from 8am to 5pm.</p>
-                            <p className="mt-2 text-blue-500">+1 (555) 000-0000</p>
+                            <p className="mt-2 text-blue-500">+880 1903-219313</p>
                         </div>
                     </div>
                 </div>
