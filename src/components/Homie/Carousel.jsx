@@ -7,19 +7,28 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 import Slider from './Slider';
+import axios from 'axios';
 
 
 const Carousel = () => {
     const [content, setContent] = useState([]);
 
-    useEffect(() => {
-        fetch('carousel.json')
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                setContent(data);
+    // useEffect(() => {
+    //     fetch('carousel.json')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             // console.log(data);
+    //             setContent(data);
+    //         })
+    // }, [])
+
+    useEffect(()=>{
+        axios.get('http://localhost:5000/carousel')
+            .then(res=> {
+                // console.log(res.data);
+                setContent(res.data)
             })
-    }, [])
+    },[]);
 
     return (
         <div className='my-4 md:my-10 space-y-6 flex flex-col justify-center items-center text-center'>
@@ -44,7 +53,7 @@ const Carousel = () => {
                     className="mySwiper w-full h-full rounded-3xl"
                 >
                     {
-                        content && content?.map(each => (<SwiperSlide key={each.id}>
+                        content && content?.map(each => (<SwiperSlide key={each._id}>
                             <Slider each={each} />
                         </SwiperSlide>))
                     }

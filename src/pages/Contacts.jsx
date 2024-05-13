@@ -1,5 +1,6 @@
-import VisitStores from '../components/contacts_comps/VisitStores';
+// import VisitStores from '../components/contacts_comps/VisitStores';
 import GetInTouch from '../components/contacts_comps/GetInTouch';
+import Faqs from '../components/contacts_comps/Faqs';
 // import SwiperSlider from '../components/Rooms/SwiperSlider';
 // import MySlider from '../components/contacts_comps/MySlider';
 
@@ -9,7 +10,7 @@ const Contacts = () => {
             <div className='py-2 w-[90%] mx-auto'>
                 {/* <SwiperSlider /> */}
                 {/* <MySlider/> */}
-                <VisitStores/>
+                <Faqs/>
                 <GetInTouch/>
             </div>
         </div>

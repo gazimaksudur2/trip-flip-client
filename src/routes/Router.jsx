@@ -12,6 +12,7 @@ import Contacts from '../pages/Contacts';
 import About from '../pages/About';
 import SingleRoom from '../components/Rooms/SingleRoom';
 import PrivateRoute from './PrivateRoute';
+import axios from 'axios';
 
 const Router = createBrowserRouter([
     {
@@ -44,6 +45,7 @@ const Router = createBrowserRouter([
     {
         path: '/singleroom/:id',
         element: <PrivateRoute><SingleRoom/></PrivateRoute>,
+        // loader: ({params})=> axios.get(`http://localhost:5000/rooms/${params.id}`, { withCredentials: true})
     },
     {
         path: '/authenticate',

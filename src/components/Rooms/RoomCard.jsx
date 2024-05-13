@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import './RoomCardStyle.css';
 
-const RoomCard = () => {
-    const id = 'id';
+const RoomCard = ({ room }) => {
+    const { _id, room_title, room_description, customer_ratings, review_count } = room;
     return (
-        <Link to={`/singleroom/:${id}`}>
+        <Link to={`/singleroom/:${_id}`} state={{id: _id}}>
             <div
                 className="contain min-w-full rounded-lg bg-black shadow-secondary-1">
                 <img
@@ -12,18 +12,18 @@ const RoomCard = () => {
                     src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
                     alt="" />
                 <div className="p-6 overlay text-surface rounded-b-lg">
-                    <h5 className="mb-2 text-xl font-medium leading-tight">Card title</h5>
-                    <p className="mb-4 text-base">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the cards content.
+                    <h5 className="mb-2 text-xl font-semibold leading-tight">{room_title}</h5>
+                    <p className="mb-4 text-sm">
+                        {(room_description.slice(0,50)+" ...")}
                     </p>
-                    <button
-                        type="button"
-                        className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2"
-                        data-twe-ripple-init
-                        data-twe-ripple-color="light">
-                        Button
-                    </button>
+                    <div className='w-full px-6 flex justify-between items-center'>
+                        <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-amber-100/60">
+                            <h2 className="text-sm font-normal text-amber-500">{customer_ratings}</h2>
+                        </div>
+                        <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-amber-100/60">
+                            <h2 className="text-sm font-normal text-amber-500">{review_count}</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Link>

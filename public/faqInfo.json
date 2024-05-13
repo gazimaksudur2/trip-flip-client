@@ -1,0 +1,23 @@
+[
+    {
+      "question": "How do I make a reservation?",
+      "answer": "Making a reservation is easy! Simply visit our website, select your desired dates, room type, and number of guests, then proceed to payment."
+    },
+    {
+      "question": "Can I modify or cancel my reservation?",
+      "answer": "Yes, you can modify or cancel your reservation depending on the cancellation policy. Please refer to your booking confirmation email for details or contact our customer support team."
+    },
+    {
+      "question": "What are the check-in and check-out times?",
+      "answer": "Check-in time is at 3:00 PM and check-out time is at 12:00 PM. Early check-in or late check-out may be available upon request, subject to availability."
+    },
+    {
+      "question": "Do you offer airport shuttle services?",
+      "answer": "Yes, we offer airport shuttle services for the convenience of our guests. Please inform us of your flight details in advance to arrange pick-up and drop-off."
+    },
+    {
+      "question": "Are pets allowed in the hotel?",
+      "answer": "We understand that pets are family too! Some of our properties are pet-friendly, while others may have specific policies. Please check with the hotel directly for pet policies."
+    }
+  ]
+  

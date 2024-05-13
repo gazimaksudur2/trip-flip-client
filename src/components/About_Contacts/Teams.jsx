@@ -5,8 +5,8 @@ const Teams = () => {
                 <div className="container px-6 py-10 mx-auto">
                     <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">Our Executive Team</h1>
 
-                    <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 300">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
+                    <p className="max-w-[65%] mx-auto my-6 text-center text-gray-500 300">
+                    Discover the epitome of hospitality with our elite booking team. From tailored experiences to seamless service, we are committed to exceeding your expectations and creating unforgettable journeys.
                     </p>
 
                     <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
@@ -15,7 +15,7 @@ const Teams = () => {
 
                                 <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize group-hover:text-white">arthur melo</h1>
 
-                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">design director</p>
+                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">Chief director</p>
 
                                 <div className="flex mt-3 -mx-2">
                                     <a className="mx-2 text-gray-600 300 hover:text-gray-500 gray-300 group-hover:text-white" aria-label="Reddit">
@@ -52,7 +52,7 @@ const Teams = () => {
 
                                 <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize group-hover:text-white">Amelia. Anderson</h1>
 
-                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">Lead Developer</p>
+                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">General Manager</p>
 
                                 <div className="flex mt-3 -mx-2">
                                     <a className="mx-2 text-gray-600 300 hover:text-gray-500 gray-300 group-hover:text-white" aria-label="Reddit">
@@ -89,7 +89,7 @@ const Teams = () => {
 
                                 <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize group-hover:text-white">Olivia Wathan</h1>
 
-                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">Lead designer</p>
+                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">Receptionist</p>
 
                                 <div className="flex mt-3 -mx-2">
                                     <a className="mx-2 text-gray-600 300 hover:text-gray-500 gray-300 group-hover:text-white" aria-label="Reddit">
@@ -126,7 +126,7 @@ const Teams = () => {
 
                                 <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize group-hover:text-white">John Doe</h1>
 
-                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">Full stack developer</p>
+                                <p className="mt-2 text-gray-500 capitalize 300 group-hover:text-gray-300">Receptionist</p>
 
                                 <div className="flex mt-3 -mx-2">
                                     <a className="mx-2 text-gray-600 300 hover:text-gray-500 gray-300 group-hover:text-white" aria-label="Reddit">

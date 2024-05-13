@@ -1,9 +1,9 @@
 Assigned Assignment Variant is: assignment_category_0004
 
-Client side git Private repo: https://github.com/Porgramming-Hero-web-course/b9a11-server-side-gazimaksudur2/tree/main
-Server side git Private repo: https://github.com/Porgramming-Hero-web-course/b9a11-server-side-gazimaksudur2/tree/main
+Client side git Private repo: https://github.com/Porgramming-Hero-web-course/b9a11-client-side-gazimaksudur2
+Server side git Private repo: https://github.com/Porgramming-Hero-web-course/b9a11-server-side-gazimaksudur2
 
-live site url: https://trip-flip.web.app/
+live site url: https://trip-flip.web.app
 
 Website title: Trip_Flip
 

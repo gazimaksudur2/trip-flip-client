@@ -19,7 +19,7 @@ const Rooms = () => {
                 console.log(error);
             })
     }, [user]);
-    console.log(rooms);
+    // console.log(rooms);
     
     return (
         <div className="py-8">
@@ -30,14 +30,9 @@ const Rooms = () => {
             <p className="text-center py-5">Total Existing room is : {rooms.length}</p>
             <p className="text-center py-5">Filter your rooms for your own price range.</p>
             <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <RoomCard/>
-                <RoomCard/>
-                <RoomCard/>
-                <RoomCard/>
-                <RoomCard/>
-                <RoomCard/>
-                <RoomCard/>
-                <RoomCard/>
+                {
+                    rooms && rooms.map(room=>(<RoomCard key={room._id} room={room}/>))
+                }
             </div>
         </div>
     );
