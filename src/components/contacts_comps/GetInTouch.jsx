@@ -34,7 +34,7 @@ const GetInTouch = () => {
 
                             <h2 className="mt-4 text-lg font-medium text-gray-800 ">Head Office</h2>
                             <p className="mt-2 text-gray-500">Come say hello at our office HQ.</p>
-                            <p className="mt-2 text-blue-500">12/A, D Block, Shahjalal Upashahar, Sylhet Sadar</p>
+                            <p className="mt-2 text-blue-500">12/A, Shahjalal Upashahar, Sylhet Sadar</p>
                         </div>
 
                         <div className="flex flex-col items-center justify-center text-center">

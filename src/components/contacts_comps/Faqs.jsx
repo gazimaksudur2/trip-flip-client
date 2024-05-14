@@ -17,7 +17,7 @@ const Faqs = () => {
         <div>
             <section className="w-[90%] mx-auto my-3">
                 <div className="container px-6 py-12 mx-auto">
-                    <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl">Frequently asked questions</h1>
+                    <h1 className="text-center text-2xl font-semibold text-gray-800 lg:text-3xl">Frequently asked questions</h1>
 
                     <div className="mt-8 space-y-8 lg:mt-12">
                         {
