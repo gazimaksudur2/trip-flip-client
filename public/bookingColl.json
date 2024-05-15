@@ -1,0 +1,105 @@
+[{
+    "_id": {
+      "$oid": "6643b0564f0e239654166348"
+    },
+    "checkin": "2024-05-07",
+    "bookedAt": "2024-05-02",
+    "checkout": "2024-05-11",
+    "plan": {
+      "room": "2 room, 3 travelers",
+      "children": "2 children",
+      "offer": 20
+    },
+    "roomId": "66425822cd70a5e915988eed",
+    "grandTotal": 390,
+    "phoneNo": "8673876598737",
+    "cardNo": "375678",
+    "code": "2629",
+    "client": "Chacha",
+    "clientPhoto": "https://mdbcdn.b-cdn.net/img/new/avatars/1.webp",
+    "clientEmail": "chacha@chachi.com"
+  },
+  {
+    "_id": {
+      "$oid": "6643b2c44f0e239654166349"
+    },
+    "checkin": "2024-06-12",
+    "bookedAt": "2024-06-12",
+    "checkout": "2024-06-19",
+    "plan": {
+      "room": "2 room, 4 travelers",
+      "children": "3 children",
+      "offer": 25
+    },
+    "roomId": "66425822cd70a5e915988eea",
+    "grandTotal": 640,
+    "phoneNo": "01903219313",
+    "cardNo": "654789",
+    "code": "8529",
+    "client": "Mira Brown",
+    "clientPhoto": "https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "clientEmail": "mira@kira.com"
+  },
+  {
+    "_id": {
+      "$oid": "6643b3a34f0e23965416634a"
+    },
+    "checkin": "2024-05-28",
+    "bookedAt": "2024-05-22",
+    "checkout": "2024-06-01",
+    "plan": {
+      "room": "1 room, 1 travelers",
+      "children": "2 children",
+      "offer": 50
+    },
+    "roomId": "66425822cd70a5e915988ef2",
+    "grandTotal": 576,
+    "phoneNo": "01925601267",
+    "cardNo": "654789",
+    "code": "4562",
+    "client": "Jeny Doe",
+    "clientPhoto": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80",
+    "clientEmail": "jeny@mini.com"
+  },
+  {
+    "_id": {
+      "$oid": "6643b40e4f0e23965416634b"
+    },
+    "checkin": "2024-06-05",
+    "bookedAt": "2024-06-02",
+    "checkout": "2024-06-08",
+    "plan": {
+      "room": "2 room, 3 travelers",
+      "children": "1 child",
+      "offer": 15
+    },
+    "roomId": "66425822cd70a5e915988ef1",
+    "grandTotal": 297,
+    "phoneNo": "01731013276",
+    "cardNo": "856791",
+    "code": "7364",
+    "client": "gazimaksudur2",
+    "clientPhoto": "https://avatars.githubusercontent.com/u/107040225?v=4",
+    "clientEmail": null
+  },
+  {
+    "_id": {
+      "$oid": "6643b635307eb490d900e09f"
+    },
+    "checkin": "2024-05-17",
+    "bookedAt": "2024-05-12",
+    "checkout": "2024-05-31",
+    "plan": {
+      "room": "2 room, 3 travelers",
+      "children": "1 child",
+      "offer": 35
+    },
+    "roomId": "66425822cd70a5e915988eec",
+    "grandTotal": 176,
+    "phoneNo": "01903219313",
+    "cardNo": "64654132",
+    "code": "9744",
+    "client": "Gazi Maksudur Rahman",
+    "clientPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJDM4t8wV94JTAvdo0BWFzaGFBAC6sXuKlLPV_oCxMz8ITDd2fC=s96-c",
+    "clientEmail": "gazi62@student.sust.edu"
+  }]

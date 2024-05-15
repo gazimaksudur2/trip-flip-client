@@ -158,3 +158,16 @@ Add more properties
 3. special offers for various reasons (like: for first time booking 10%, for children 50%, for couple 20%, for native countrymen traveler 30%, for foreigner 25% etc for each maximum 2 offers should be available and should not same for all)
 4. features : (like scenic beauty, near to nature, movie theater, attached park etc.)
 5. add a single image as card_img from the images
+
+
+featured images
+https://images.trvl-media.com/lodging/2000000/1450000/1449300/1449297/38ca1937.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/90000000/89240000/89235500/89235430/cbe2eb27.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/36000000/35900000/35893400/35893302/bf212214.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/19000000/18360000/18353300/18353275/50c9af17.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/19000000/18360000/18353300/18353275/0e4509cc.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/2000000/1450000/1449300/1449297/3b4e63d8.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/3000000/2440000/2434400/2434355/0a19825c.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/3000000/2440000/2434400/2434355/e328d535.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/46000000/45340000/45335200/45335196/733d6990.jpg?impolicy=resizecrop&rw=1200&ra=fit
+https://images.trvl-media.com/lodging/46000000/45340000/45335200/45335196/f3029bc5.jpg?impolicy=resizecrop&rw=1200&ra=fit

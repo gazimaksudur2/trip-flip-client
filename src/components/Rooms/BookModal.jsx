@@ -53,7 +53,10 @@ const BookModal = ({ setShowBookModal, special_offers, fare, roomId }) => {
 
     useEffect(() => {
         setDiscountedTotal((childFare + adultFare) * off * 0.01);
-    }, [childFare, adultFare, off]);
+        const myPlan = {...plan};
+        myPlan.offer = off;
+        setPlan(myPlan);
+    }, [childFare, adultFare, off, plan]);
 
     useEffect(() => {
         setGrandTotal((childFare + adultFare) - discountedTotal);
@@ -64,10 +67,11 @@ const BookModal = ({ setShowBookModal, special_offers, fare, roomId }) => {
         const cardNo = e.target.card.value;
         const phoneNo = e.target.phone.value;
         const code = e.target.code.value;
+        const bookedAt = new Date().toISOString();
         setShowBookModal(false);
         console.log('form submitted!!!',checkin, checkout,  cardNo, phoneNo, code, plan);
 
-        axios.post('http://localhost:5000/bookings',{checkin, checkout, plan, roomId, grandTotal, phoneNo, cardNo, code, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email})
+        axios.post('http://localhost:5000/bookings',{bookedAt, checkin, checkout, plan, roomId, grandTotal, phoneNo, cardNo, code, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email})
             .then(res=>{
                 console.log(res);
             })
