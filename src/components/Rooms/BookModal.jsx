@@ -63,7 +63,7 @@ const BookModal = ({ setShowBookModal, special_offers, fare, roomId }) => {
         setShowBookModal(false);
         console.log('form submitted!!!',checkin, checkout,  cardNo, phoneNo, code, plan);
 
-        axios.post('http://localhost:5000/bookings',{bookedAt, checkin, checkout, plan, roomId, grandTotal, phoneNo, cardNo, code, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email})
+        axios.post('https://server-seven-gamma-70.vercel.app/bookings',{bookedAt, checkin, checkout, plan, roomId, grandTotal, phoneNo, cardNo, code, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email})
             .then(res=>{
                 console.log(res);
             })

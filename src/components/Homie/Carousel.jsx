@@ -23,7 +23,7 @@ const Carousel = () => {
     // }, [])
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/carousel')
+        axios.get('https://server-seven-gamma-70.vercel.app/carousel')
             .then(res=> {
                 // console.log(res.data);
                 setContent(res.data)

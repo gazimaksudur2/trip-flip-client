@@ -10,7 +10,7 @@ const BookingTable = () => {
     const [reviewInfo, setReviewInfo] = useState({});
 
     useEffect(() => {
-        axios.get('http://localhost:5000/bookings')
+        axios.get('https://server-seven-gamma-70.vercel.app/bookings')
             .then(res => {
                 setMyBookings(res.data);
             })
@@ -36,7 +36,7 @@ const BookingTable = () => {
             return;
         }
 
-        axios.post('http://localhost:5000/reviews', { roomId, roomImg, roomTitle, review, rating, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email })
+        axios.post('https://server-seven-gamma-70.vercel.app/reviews', { roomId, roomImg, roomTitle, review, rating, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email })
             .then(res => {
                 console.log(res);
             })

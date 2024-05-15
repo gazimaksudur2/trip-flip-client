@@ -6,7 +6,7 @@ const ReviewModal = ({ setShowModal, id }) => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/reviews/${id}`)
+        axios.get(`https://server-seven-gamma-70.vercel.app/reviews/${id}`)
         .then(res => {
             setReviews(res.data);
         })

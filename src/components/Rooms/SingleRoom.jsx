@@ -10,7 +10,7 @@ const SingleRoom = () => {
     // const [roomData, setRoomData] = useState({});
     // const room_images = [];
     // useEffect(()=>{
-    //     axios.get(`http://localhost:5000/rooms/${locate.pathname.substring(locate.pathname.indexOf('/:')+2)}`)
+    //     axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${locate.pathname.substring(locate.pathname.indexOf('/:')+2)}`)
     //         .then(res=>{
     //             setRoomData(res);
     //         })

@@ -15,7 +15,7 @@ const Reviews = () => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reviews')
+        axios.get('https://server-seven-gamma-70.vercel.app/reviews')
             .then(res=>{
                 // console.log(res.data);
                 setData(res.data);

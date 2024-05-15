@@ -1,129 +1,103 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+// import { Link } from "react-router-dom";
 
-const UpdateBooking = ({setUpdateBookModal}) => {
-    // const [showBookModal, setUpdateBookModal] = useState(true);
-    const { user } = useContext(AuthContext);
-    const [off, setOff] = useState(0.0);
-    const [grandTotal, setGrandTotal] = useState(0.0);
-    const [discountedTotal, setDiscountedTotal] = useState(0.0);
-    const [room, setRoom] = useState(0.0);
-    const [person, setPerson] = useState(0.0);
-    const [child, setChild] = useState(0.0);
-    const [checkin, setCheckIn] = useState(null);
-    const [checkout, setCheckOut] = useState(null);
-    const [plan, setPlan] = useState({});
+const UpdateBooking = ({ booking }) => {
+    const [roomInfo, setRoomInfo] = useState({});
+    // const [plan, setPlan] = useState({});
 
-    const handleUpForm = async (e) => {
-        // e.preventDefault();
-        const property = e.target.name;
-        const value = e.target.value;
-        const myPlan = { ...plan };
-
-        if (property === 'checkin') {
-            await setCheckIn(value);
-        } else if (property === 'checkout') {
-            await setCheckOut(value);
-        } else if (property === 'room') {
-            myPlan.room = value;
-            await setRoom(parseFloat(value.slice(0, 1)));
-            await setPerson(parseFloat(value.slice(8, 9)));
-        } else if (property === 'children') {
-            myPlan.children = value;
-            await setChild((value === 'None') ? 0.0 : value.slice(0, 1));
-        }
-
-        setPlan(myPlan);
-        // const targ = e.target;
-        // const form = new FormData(e.target);
-        // const checkIn = form.get('checkin');
-        // const checkOut = form.get('checkout');
-        // const roomno = form.get('room');
-        // const children = form.get('children');
-        // console.log(children.slice(0,1), " ", children.slice(8,9));
-        // console.log(property);
-    }
-
-    // useEffect(() => {
-    //     setChildFare(child * fare * 0.4);
-    //     setAdultFare(person & 1 ? ((room - 1) * fare + (fare * 0.8)) : (room * fare));
-    // }, [room, fare, child, person]);
-
-    // useEffect(() => {
-    //     setDiscountedTotal((childFare + adultFare) * off * 0.01);
-    //     const myPlan = { ...plan };
-    //     myPlan.offer = off;
-    //     setPlan(myPlan);
-    // }, [childFare, adultFare, off, plan]);
-
-    // useEffect(() => {
-    //     setGrandTotal((childFare + adultFare) - discountedTotal);
-    // }, [discountedTotal, childFare, adultFare]);
+    useEffect(() => {
+        axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${booking.roomId}`)
+            .then(res => {
+                setRoomInfo(res.data);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }, []);
 
     const handleSubmit = e => {
         e.preventDefault();
-        const cardNo = e.target.card.value;
-        const phoneNo = e.target.phone.value;
-        const code = e.target.code.value;
-        const bookedAt = new Date().toISOString();
-        // setUpdateBookModal(false);
-        // console.log('form submitted!!!', checkin, checkout, cardNo, phoneNo, code, plan);
+        console.log(e.target);
+        const checkIn = e.target.checkin.value;
+        const checkOut = e.target.checkout.value;
+        // const room = e.target.room.value;
+        // const children = e.target.children.value;
+        // const roomNo = room.slice(0, 1);
+        // const travelerNo = room.slice(8, 9);
+        // console.log(children.slice(0, 1), " ", children.slice(8, 9));
+        // setPlan({
+        //     room,
+        //     children,
+        //     offer: booking.plan.offer,
+        // })
+        // console.log('form submitted!!!', checkIn, checkOut, room, plan, room, roomNo, travelerNo);
+        
+        // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource
 
-        // axios.post('http://localhost:5000/bookings', { bookedAt, checkin, checkout, plan, roomId, grandTotal, phoneNo, cardNo, code, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email })
-        //     .then(res => {
-        //         console.log(res);
-        //     })
-        //     .catch(error => {
-        //         console.log(error.message);
-        //     })
+        axios.patch(`https://server-seven-gamma-70.vercel.app/bookings/${booking._id}`, { updatedAt: new Date().toISOString(), checkIn, checkOut })
+            .then(res => {
+                console.log(res);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.log(error.message);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Your booking isn't updated!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+
+        e.target.reset();
     }
-
+    // console.log(booking.checkin);
     return (
         <>
-            <div
-                className="h-[80vh] my-auto flex overflow-x-hidden justify-center items-center overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-            >
-                <div className="relative flex flex-col justify-center my-6 mx-auto max-w-3xl shadow-lg">
+            <div className="h-[80vh] w-[40%] flex overflow-x-hidden justify-center items-center overflow-y-auto inset-0 z-50 outline-none focus:outline-none rounded-xl">
+                <div className="modal-action w-full relative flex flex-col justify-center mx-auto shadow-lg">
                     {/*content*/}
-                    <div className="border-0 rounded-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                        {/*header*/}
-                        <div className="flex items-start justify-between pt-4 px-4 pb-2 border-b border-solid border-blueGray-200 rounded-t">
+                    <form method="dialog" className="absolute p-1 z-[1000] ml-auto border-0 text-black opacity-75 float-right text-3xl leading-none font-semibold outline-none focus:outline-none top-3 right-4 cursor-pointer"
+                    >
+                        <input className="text-black h-6 w-6 opacity-50 text-2xl block outline-none focus:outline-none cursor-pointer" value={'×'} type="submit" />
+                    </form>
+                    <div className="border-0 rounded-xl relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        <div className="pt-4 flex justify-start items-center px-2 pb-2 border-b border-solid border-blueGray-200">
                             <h3 className="font-semibold">
-                                Book your room at <span className="pl-4 text-3xl text-primary">Seaside Bungalow</span>
+                                Update Your Booked room <span className="pl-4 text-2xl text-primary">{roomInfo.room_title}</span>
                             </h3>
-                            <button
-                                className="p-1 z-[1000] ml-auto border-0 text-black opacity-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                onClick={() => setUpdateBookModal(false)}
-                            >
-                                <span className="text-black h-6 w-6 opacity-50 text-2xl block outline-none focus:outline-none">
-                                    ×
-                                </span>
-                            </button>
                         </div>
-                        {/*body*/}
-                        <div className="h-[60vh] relative px-4 pt-2 flex-auto overflow-scroll">
+                        <div className="h-[40vh] relative px-4 pt-2 flex-auto overflow-scroll">
                             <div className="p-2 overflow-hidden">
-                                <h1 className="text-xl font-semibold font-jakarta">Choose Your Unit</h1>
-                                <form onChange={handleUpForm}>
+                                <form onSubmit={handleSubmit}>
                                     <div className="flex justify-center gap-6">
                                         <div className="pt-3 w-full">
                                             <label className="block text-sm text-gray-500">Check In Date</label>
 
-                                            <input type="date" className="block  mt-2 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40-300" name="checkin" />
+                                            <input type="date" className="block  mt-2 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40-300" defaultValue={booking?.checkin} name="checkin" />
                                         </div>
                                         <div className="pt-3 w-full">
                                             <label className="block text-sm text-gray-500">Check Out Date</label>
 
-                                            <input type="date" className="block  mt-2 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40-300" name="checkout" />
+                                            <input type="date" className="block  mt-2 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40-300" defaultValue={booking?.checkout} name="checkout" />
                                         </div>
                                     </div>
-                                    <div className="flex justify-center gap-6">
+                                    <div className="pb-5 flex justify-center gap-6">
                                         <label className="form-control w-full">
                                             <div className="label">
                                                 <span className="label-text">Travelers Choice</span>
                                             </div>
                                             <select className="select select-bordered" name="room">
-                                                <option disabled selected value={null}>Pick one</option>
+                                                <option disabled selected value={null}>{booking?.plan?.room}</option>
                                                 <option>1 room, 2 travelers</option>
                                                 <option>1 room, 1 travelers</option>
                                                 <option>2 room, 3 travelers</option>
@@ -136,7 +110,7 @@ const UpdateBooking = ({setUpdateBookModal}) => {
                                                 <span className="label-text">Children Seat</span>
                                             </div>
                                             <select className="select select-bordered" name="children">
-                                                <option disabled selected>Pick one</option>
+                                                <option disabled selected>{booking?.plan?.children}</option>
                                                 <option>None</option>
                                                 <option>1 child</option>
                                                 <option>2 children</option>
@@ -145,92 +119,13 @@ const UpdateBooking = ({setUpdateBookModal}) => {
                                             </select>
                                         </label>
                                     </div>
-                                    <div className="w-full pt-3 flex flex-col justify-between items-start">
-                                        <h3 className="font-semibold text-gray-600 text-lg">Choose Any Special Offer<span className="text-xs text-gray-600">(Only one at a time)</span></h3>
-                                        <ul className="px-1 pt-2 flex flex-col justify-center items-start">
-                                            {
-                                                // special_offers.map((offr, idx) => <li key={idx}>
-                                                //     <div className="flex flex-row-reverse justify-center items-center gap-2">
-                                                //         <span className="label-text">{offr.offer} {offr.value}% off</span>
-                                                //         <input onClick={() => setOff(offr.value)} type="radio" name="radio-7" className="radio radio-info scale-75" />
-                                                //     </div>
-                                                // </li>)
-                                            }
-                                        </ul>
-                                    </div>
+                                    <input
+                                        className="btn w-full bg-[#1dd100] text-white hover:bg-[#1dd100ac] disabled:bg-[#1dd1003c]" value={'Update Booking'} type="submit" />
+                                </form>
+                                <form method="dialog">
+                                    <input type="submit" className=" btn mt-5 w-full bg-red-600 text-white hover:bg-red-300" value={'Exit From Here'} />
                                 </form>
 
-                                <div className="pt-5 flex flex-col space-y-1">
-                                    <h2
-                                        className="font-jakarta pb-5 text-center lg:text-start text-2xl font-semibold border-b-2 border-dashed border-gray-300">
-                                        Confirm & Pay for Your Booking
-                                    </h2>
-                                    <div className="pt-4 flex flex-col justify-center lg:justify-between items-center gap-4">
-                                        <div className="flex justify-evenly items-center w-full">
-                                            <h3 className="font-semibold">Total Selected Room <span className="bg-green-500 ml-2 text-white p-1 rounded-full">{room}</span></h3>
-                                            <div className="space-y-2">
-                                                <p className="text-gray-700 font-medium">Each Room for Per Night Fare : <span className="text-green-500 font-bold text-2xl">${}</span></p>
-                                                <p className="text-xs text-red-500">*if one traveler is unpaired he/she will grab 20% discount for that single room</p>
-                                                <p className="text-xs text-red-500">*and for each children he have to pay 30% of the actual fare</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="w-full flex justify-center items-center gap-4">
-                                            <div
-                                                className="w-full p-4 font-inter text-lg border-2 border-orange-800 bg-orange-300 rounded-lg font-medium flex justify-between">
-                                                <p>Adult Fare</p>
-                                                <h2>USD <span className="text-xl">{}</span> <span className={(person & 1) ? 'text-sm text-red-700 line-through' : 'hidden'}>{room}</span> <span className="text-sm"> only</span></h2>
-                                            </div>
-
-                                            <div
-                                                className="w-full p-4 font-inter text-lg border-2 border-blue-800 bg-blue-300 rounded-lg font-medium flex justify-between">
-                                                <p>Child Fare</p>
-                                                <h2>USD <span className="text-xl">{child  * 0.4}</span> <span className={child == 0 ? "hidden" : "text-sm text-red-700 line-through"}>{child}</span> <span className="text-sm"> only</span></h2>
-                                            </div>
-                                        </div>
-                                        <div className={(discountedTotal > 0) ? "w-full p-4 border-2 box-border rounded-md bg-amber-300 flex justify-between" : "hidden"}>
-                                            <h3 className="font-inter text-lg font-medium">
-                                                Special offer Achieved
-                                            </h3>
-                                            <h2>USD <span id="discount" className="font-bold text-3xl"> {discountedTotal} </span><span className="text-2xl text-red-800">
-                                                OFF</span></h2>
-                                        </div>
-                                        <div
-                                            className="w-full p-4 font-inter text-lg border-2 border-green-800 bg-green-300 rounded-lg font-medium flex justify-between">
-                                            <p>Grand Total</p>
-                                            <h2>USD <span id="grand-total" className="text-xl">{grandTotal}</span><span className="text-sm"> only</span></h2>
-                                        </div>
-                                        <form  method="dialog" className="w-full mt-4 mb-5 text-[#030712] font-inter text-lg font-semibold space-y-5">
-                                            <label className="form-control w-full">
-                                                <div className="label">
-                                                    <span className="label-text">Phone Number*</span>
-                                                </div>
-                                                <input name="phone" type="number" placeholder="Enter Your Phone Number"
-                                                    className="input input-bordered w-full" required />
-                                            </label>
-                                            <label className="form-control w-full">
-                                                <div className="label">
-                                                    <span className="label-text">Card Number*</span>
-                                                </div>
-                                                <input name="card" type="number" placeholder="Enter Your Card Number"
-                                                    className="input input-bordered w-full" required />
-                                            </label>
-                                            <label className="form-control w-full">
-                                                <div className="label">
-                                                    <span className="label-text">Security Code*</span>
-                                                </div>
-                                                <input name="code" type="number" placeholder="Enter Your Security Code"
-                                                    className="input input-bordered w-full" required />
-                                            </label>
-                                            <input onClick={handleSubmit}
-                                                className="btn w-full bg-[#1dd100] text-white hover:bg-[#1dd100ac] disabled:bg-[#1dd1003c]" value={'Confirm & Book'} type="submit" />
-                                            <div className="links w-3/4 mx-auto text-sm font-normal flex justify-between">
-                                                <a href="http://">Terms & Conditions</a>
-                                                <a href="http://">Cancellation Policy</a>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

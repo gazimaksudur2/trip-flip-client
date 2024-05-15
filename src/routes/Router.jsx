@@ -45,7 +45,7 @@ const Router = createBrowserRouter([
     {
         path: '/singleroom/:id',
         element: <PrivateRoute><SingleRoom/></PrivateRoute>,
-        loader: ({params})=> axios.get(`http://localhost:5000/rooms/${params.id}`, { withCredentials: true})
+        loader: ({params})=> axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${params.id}`, { withCredentials: true})
     },
     {
         path: '/authenticate',

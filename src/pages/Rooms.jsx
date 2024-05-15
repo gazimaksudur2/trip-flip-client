@@ -8,11 +8,11 @@ import { MdFilterList } from "react-icons/md";
 
 const Rooms = () => {
     const { user } = useContext(AuthContext);
-    const [url, setURL] = useState('http://localhost:5000/rooms');
+    const [url, setURL] = useState('https://server-seven-gamma-70.vercel.app/rooms');
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
-        // axios.get(`http://localhost:5000/rooms?email=${user?.email}&&name=${user?.displayName}`, { withCredentials: true })
+        // axios.get(`https://server-seven-gamma-70.vercel.app/rooms?email=${user?.email}&&name=${user?.displayName}`, { withCredentials: true })
         axios.get(url)
             .then(res => {
                 setRooms(res.data);
@@ -25,7 +25,7 @@ const Rooms = () => {
     const handleFilter = e => {
         // console.log(e.target.value, e.target.name);
         const limit = e.target.value;
-        let URL = 'http://localhost:5000/rooms';
+        let URL = 'https://server-seven-gamma-70.vercel.app/rooms';
 
         // console.log(limit.slice(limit.length-4,limit.length));
         if (limit === 'all') {

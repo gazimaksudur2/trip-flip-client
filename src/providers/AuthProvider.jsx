@@ -58,7 +58,7 @@ const AuthProvider = ({children}) => {
             setLoading(false);
             console.log("from observer: ", loggedUser);
             if(curUser){
-                axios.post('http://localhost:5000/jwt', loggedUser, {withCredentials: true})
+                axios.post('https://server-seven-gamma-70.vercel.app/jwt', loggedUser, {withCredentials: true})
                 .then(res=> {
                     console.log(res.data);
                 })
@@ -66,7 +66,7 @@ const AuthProvider = ({children}) => {
                     console.log(error);
                 })
             }else{
-                axios.post('http://localhost:5000/logout', loggedUser, {withCredentials: true})
+                axios.post('https://server-seven-gamma-70.vercel.app/logout', loggedUser, {withCredentials: true})
                 .then(res=> {
                     console.log(res.data);
                 })
