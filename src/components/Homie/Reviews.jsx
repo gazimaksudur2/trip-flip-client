@@ -9,14 +9,20 @@ import { useEffect, useState } from 'react';
 // import Slider from './Slider';
 // import ReviewCard from './ReviewCard';
 import ReviewTestimonial from './ReviewTestimonial';
+import axios from 'axios';
 
 const Reviews = () => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        fetch('reviews.json')
-            .then(res => res.json())
-            .then(datas => setData(datas));
+        axios.get('http://localhost:5000/reviews')
+            .then(res=>{
+                // console.log(res.data);
+                setData(res.data);
+            })
+            .catch(error=>{
+                console.log(error.message);
+            })
     }, [])
 
     // console.log(data);
@@ -34,7 +40,7 @@ const Reviews = () => {
                     </div>
                     <p className="text-gray-700 font-normal font-source text-center mb-8">Discover why our customers love us! Read real reviews and testimonials from satisfied clients who have experienced our exceptional service and found their dream properties.</p>
                 </div>
-                <div className='h-[50vh] w-full'>
+                <div className='w-full'>
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
@@ -43,11 +49,11 @@ const Reviews = () => {
                         }}
                         loop={true}
                         modules={[Pagination]}
-                        className="mySwiper w-full h-full bg-white rounded-3xl"
+                        className="mySwiper w-full h-[60vh] bg-white rounded-3xl"
                     >
                         {
-                            data && data?.map(each => (<SwiperSlide key={each.id} className='relative'>
-                                <ReviewTestimonial />
+                            data && data.slice(0,5)?.map(each => (<SwiperSlide key={each._id} className='relative bg-blue-50'>
+                                <ReviewTestimonial each={each} />
                             </SwiperSlide>))
                         }
                     </Swiper>

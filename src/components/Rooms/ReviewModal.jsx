@@ -1,4 +1,20 @@
-const ReviewModal = ({setShowModal}) => {
+import { Rating } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const ReviewModal = ({ setShowModal, id }) => {
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/reviews/${id}`)
+        .then(res => {
+            setReviews(res.data);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    },[]);
+
     return (
         <div>
             <div
@@ -23,43 +39,30 @@ const ReviewModal = ({setShowModal}) => {
                         </div>
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
-                            <div className="h-[30vh] overflow-scroll">
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
-                                <div className="py-2 px-4 border-b-2 border-gray-300">
-                                    <h3 className="text-lg font-medium text-blue-500 leading-relaxed">Mia Brown</h3>
-                                    <p className="text-gray-600 leading-relaxed">Marketing Manager at Stech</p>
-                                </div>
+                            <div className="h-[30vh] overflow-scroll space-y-4">
+                                {
+                                    (!(reviews) || (reviews.length == 0)) && <h1 className="font-semibold text-xl text-center text-red-500">No Review Posted For this room till Now!!</h1>
+                                }
+                                {
+                                    reviews && reviews.map(review => (<>
+                                        <div key={review._id} className="py-4 px-4 border-b-2 border-gray-300 flex flex-col justify-between items-center gap-4 shadow">
+                                            <div className="flex flex-row items-center justify-start gap-8">
+                                                <img className="object-cover rounded-full w-14 h-14" src={review.clientPhoto} alt="" />
+                                                <div className="text-center flex flex-col justify-center items-start">
+                                                    <Rating name="half-rating-read" value={review.rating} precision={0.5} readOnly />
+                                                    <h1 className="font-semibold text-gray-800 ">{review.client}</h1>
+                                                    <span className="text-sm text-gray-500">{review?.clientEmail ? review.clientEmail : "Email didn't Provided!!"}</span>
+                                                </div>
+                                            </div>
+                                            <p className="flex items-center justify-center text-center text-gray-500 lg:mx-14">
+                                                {review.review}
+                                            </p>
+                                            {/* <p className="flex items-center justify-center text-center text-gray-500 lg:mx-14">
+                                                {review.roomId +"  "+id}
+                                            </p> */}
+                                        </div>
+                                    </>))
+                                }
                             </div>
                         </div>
                         {/*footer*/}

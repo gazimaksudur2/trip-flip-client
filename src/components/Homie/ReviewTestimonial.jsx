@@ -1,31 +1,32 @@
-const ReviewTestimonial = () => {
+import { Rating } from "@mui/material";
+
+const ReviewTestimonial = ({ each }) => {
     return (
-        <div>
-            <section className="min-h-full">
-                <div className="container px-6 mx-auto">
-                    <div className="flex items-start max-w-6xl mx-auto mt-16">
-                        <div>
-                            <p className="flex items-center text-center text-gray-500 lg:mx-8">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quam. Odio voluptatem officiis
-                                eos illo! Pariatur, totam alias. Beatae accusamus earum quos obcaecati minima molestias. Possimus
-                                minima dolores itaque! Esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates
-                                fugiat corrupti laudantium dolores reiciendis pariatur esse quod nihil quia cupiditate debitis
-                                quisquam nemo, accusamus animi explicabo? Architecto, unde laboriosam?
-                            </p>
+        <section className="min-h-full flex flex-col justify-center items-center">
+            <div className="px-6 max-w-6xl mx-auto">
+                <div className="w-full ">
+                    <div className="py-3 flex flex-row-reverse items-center justify-center gap-4">
+                        <h2 className="text-xl font-bold font-jakarta mb-2 text-[#151515cd]">{each.roomTitle}</h2>
+                        <img
+                            src={each.roomImg}
+                            className="w-16 h-12 rounded-lg shadow-lg"
+                            alt="Avatar" />
+                    </div>
+                    <p className="flex items-center justify-center text-center text-gray-500 lg:mx-8">
+                        {each.review}
+                    </p>
+                    <div className="flex flex-col items-center justify-center mt-8">
+                        <Rating name="half-rating-read" value={each.rating} precision={0.5} readOnly />
+                        <img className="object-cover rounded-full w-14 h-14" src={each.clientPhoto} alt="" />
 
-                            <div className="flex flex-col items-center justify-center mt-8">
-                                <img className="object-cover rounded-full w-14 h-14" src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" />
-
-                                    <div className="mt-4 text-center">
-                                        <h1 className="font-semibold text-gray-800 ">Mia Brown</h1>
-                                        <span className="text-sm text-gray-500">Marketer</span>
-                                    </div>
-                            </div>
+                        <div className="mt-4 text-center">
+                            <h1 className="font-semibold text-gray-800 ">{each.client}</h1>
+                            <span className="text-sm text-gray-500">{each?.clientEmail ? each.clientEmail : "Email didn't Provided!!"}</span>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     );
 };
 

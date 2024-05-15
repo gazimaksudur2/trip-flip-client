@@ -22,7 +22,7 @@ const SingleRoom = () => {
     //     .then(data=> setRoomData(data))
     // },[]);
 
-    const { _id, room_title, room_description, room_size, price_per_night, availability, facilities, room_images, reviews, special_offers, features } = roomData.data || {};
+    const { _id, room_title, room_description, room_size, price_per_night, availability, facilities, room_images, special_offers, features } = roomData.data || {};
 
     const [val, setVal] = useState((parseInt(Math.random() * 10)) % (room_images.length));
     // console.log(roomData.data, " ", room_images.length);  
@@ -50,7 +50,7 @@ const SingleRoom = () => {
             </button>
             {showModal ? (
                 <>
-                    <ReviewModal setShowModal={setShowModal} />
+                    <ReviewModal id={_id} setShowModal={setShowModal} />
                 </>
             ) : null}
         </>

@@ -16,34 +16,26 @@ const BookModal = ({ setShowBookModal, special_offers, fare, roomId }) => {
     const [checkout, setCheckOut] = useState(null);
     const [plan, setPlan] = useState({});
 
-    const handleUpForm = async (e) => {
+    const handleUpForm = (e) => {
         // e.preventDefault();
         const property = e.target.name;
         const value = e.target.value;
         const myPlan = {...plan};
 
         if (property === 'checkin') {
-            await setCheckIn(value);
+            setCheckIn(value);
         } else if (property === 'checkout') {
-            await setCheckOut(value);
+            setCheckOut(value);
         } else if (property === 'room') {
             myPlan.room = value;
-            await setRoom(parseFloat(value.slice(0, 1)));
-            await setPerson(parseFloat(value.slice(8, 9)));
+            setRoom(parseFloat(value.slice(0, 1)));
+            setPerson(parseFloat(value.slice(8, 9)));
         } else if (property === 'children') {
             myPlan.children = value;
-            await setChild((value === 'None') ? 0.0 : value.slice(0, 1));
+            setChild((value === 'None') ? 0.0 : value.slice(0, 1));
         }
 
         setPlan(myPlan);
-        // const targ = e.target;
-        // const form = new FormData(e.target);
-        // const checkIn = form.get('checkin');
-        // const checkOut = form.get('checkout');
-        // const roomno = form.get('room');
-        // const children = form.get('children');
-        // console.log(children.slice(0,1), " ", children.slice(8,9));
-        // console.log(property);
     }
 
     useEffect(() => {
