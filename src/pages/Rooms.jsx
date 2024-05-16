@@ -42,6 +42,7 @@ const Rooms = () => {
         }
         setURL(URL);
     }
+    // console.log(rooms);
 
     return (
         <div className="py-8">

@@ -3,14 +3,16 @@ import { useContext, useEffect, useState } from "react";
 import BookingRow from "./BookingRow";
 import { Rating } from "@mui/material";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const BookingTable = () => {
     const { user } = useContext(AuthContext);
+    const [myRating, setMyRating] = useState(0);
     const [myBookings, setMyBookings] = useState([]);
     const [reviewInfo, setReviewInfo] = useState({});
 
     useEffect(() => {
-        axios.get('https://server-seven-gamma-70.vercel.app/bookings')
+        axios.get(`https://server-seven-gamma-70.vercel.app/bookings?email=${user.email}`)
             .then(res => {
                 setMyBookings(res.data);
             })
@@ -24,25 +26,49 @@ const BookingTable = () => {
         // e.preventDefault();
         const form = new FormData(e.target);
         const review = form.get('review');
-        const rating = form.get('half-rating-read');
         const roomImg = reviewInfo.img;
         const roomTitle = reviewInfo.title;
         const roomId = reviewInfo.room_id;
 
-        // console.log(review, ' and ', rating);
+        // console.log(review, ' and ', myRating);
+        setMyRating(0);
         e.target.reset();
 
-        if (!review || !rating) {
+        if (!review || !myRating) {
             return;
         }
 
-        axios.post('https://server-seven-gamma-70.vercel.app/reviews', { roomId, roomImg, roomTitle, review, rating, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email })
+        axios.post('https://server-seven-gamma-70.vercel.app/reviews', { roomId, roomImg, roomTitle, review, rating: myRating, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email })
             .then(res => {
                 console.log(res);
+                axios.patch(`https://server-seven-gamma-70.vercel.app/rooms/review`, { roomId })
+                    .then(res => {
+                        console.log(res);
+                    })
+                    .catch(error => {
+                        console.log(error.message);
+                    })
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Your Review Posted Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
             .catch(error => {
                 console.log(error.message);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Occured!!",
+                    footer: error.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
+
+
     }
 
     const handleReviewInfo = (title, img, id) => {
@@ -73,7 +99,7 @@ const BookingTable = () => {
                         <form onSubmit={reviewSubmit} method="dialog" className="w-full flex flex-col justify-center items-center space-y-3">
                             <div className="w-full flex justify-evenly items-center">
                                 <h2 className="font-source ">Rate your experience</h2>
-                                <Rating name="half-rating-read" defaultValue={0} precision={0.5} required />
+                                <Rating name="half-rating-read" onChange={(e) => setMyRating(e.target.value)} value={myRating} precision={0.5} required />
                             </div>
                             <textarea placeholder="post your experience here" className="textarea textarea-bordered textarea-lg p-2 text-sm w-full" name="review" required></textarea>
                             <input className="btn btn-primary w-full" value={"Post"} type="submit" />

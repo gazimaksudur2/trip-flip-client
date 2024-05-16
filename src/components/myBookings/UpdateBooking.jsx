@@ -3,80 +3,104 @@ import axios from "axios";
 import Swal from "sweetalert2";
 // import { Link } from "react-router-dom";
 
-const UpdateBooking = ({ booking }) => {
-    const [roomInfo, setRoomInfo] = useState({});
-    // const [plan, setPlan] = useState({});
+const UpdateBooking = ({ booking, roomInfo, setShowUpdateModal }) => {
+    const [roomData, setRoomData] = useState(null);
 
-    useEffect(() => {
-        axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${booking.roomId}`)
-            .then(res => {
-                setRoomInfo(res.data);
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
-    }, []);
+    // const changeRoomInfo = e =>{
+    //     axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${booking.roomId}`)
+    //         .then(res => {
+    //             setRoomInfo(res.data);
+    //         })
+    //         .catch(error => {
+    //             console.log(error.message);
+    //         })
+    // }
+    // useEffect(() => {
+
+    // }, []);
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(e.target);
+        // console.log(e.target);
         const checkIn = e.target.checkin.value;
         const checkOut = e.target.checkout.value;
-        // const room = e.target.room.value;
-        // const children = e.target.children.value;
+        const updatedAt = new Date().toISOString().slice(0, 10);
+        const room = e.target.room.value;
+        const children = e.target.children.value;
         // const roomNo = room.slice(0, 1);
         // const travelerNo = room.slice(8, 9);
-        // console.log(children.slice(0, 1), " ", children.slice(8, 9));
+        const myPlan = {
+            room,
+            children,
+            offer: booking.plan.offer,
+        };
         // setPlan({
         //     room,
         //     children,
         //     offer: booking.plan.offer,
         // })
         // console.log('form submitted!!!', checkIn, checkOut, room, plan, room, roomNo, travelerNo);
-        
+
+
+        // console.log('form submitted!!!',updatedAt, checkIn, checkOut, room, children, myPlan);
+
         // Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource
 
-        axios.patch(`https://server-seven-gamma-70.vercel.app/bookings/${booking._id}`, { updatedAt: new Date().toISOString(), checkIn, checkOut })
+        axios.patch(`https://server-seven-gamma-70.vercel.app/bookings/${booking._id}`, { updatedAt, checkIn, checkOut, myPlan })
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 Swal.fire({
                     position: "center",
                     icon: "success",
-                    title: "Your work has been saved",
+                    title: "Your Booking is Updated Now!!",
                     showConfirmButton: false,
                     timer: 1500
                 });
             })
             .catch(error => {
-                console.log(error.message);
+                // console.log(error.message);
                 Swal.fire({
                     position: "center",
                     icon: "error",
                     title: "Your booking isn't updated!!",
+                    footer: error.message,
                     showConfirmButton: false,
                     timer: 1500
                 });
             })
 
+        setShowUpdateModal(false)
+
         e.target.reset();
     }
-    // console.log(booking.checkin);
+
+    useEffect(() => {
+        // console.log(roomInfo, new Date().toTimeString());
+        setRoomData(roomInfo)
+    }, [roomInfo]);
+
+    // console.log(roomInfo);
     return (
         <>
-            <div className="h-[80vh] w-[40%] flex overflow-x-hidden justify-center items-center overflow-y-auto inset-0 z-50 outline-none focus:outline-none rounded-xl">
-                <div className="modal-action w-full relative flex flex-col justify-center mx-auto shadow-lg">
-                    {/*content*/}
-                    <form method="dialog" className="absolute p-1 z-[1000] ml-auto border-0 text-black opacity-75 float-right text-3xl leading-none font-semibold outline-none focus:outline-none top-3 right-4 cursor-pointer"
-                    >
-                        <input className="text-black h-6 w-6 opacity-50 text-2xl block outline-none focus:outline-none cursor-pointer" value={'×'} type="submit" />
-                    </form>
-                    <div className="border-0 rounded-xl relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                        <div className="pt-4 flex justify-start items-center px-2 pb-2 border-b border-solid border-blueGray-200">
+            <div
+                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 backdrop-blur-sm outline-none focus:outline-none"
+            >
+                <div className="relative min-h-full w-[90%] flex flex-col justify-center my-6 mx-auto max-w-3xl shadow-lg">
+                    <div className="border-0 rounded-lg py-5 relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        <div className="flex items-start justify-between pt-4 px-4 pb-2 border-b border-solid border-blueGray-200 rounded-t">
                             <h3 className="font-semibold">
-                                Update Your Booked room <span className="pl-4 text-2xl text-primary">{roomInfo.room_title}</span>
+                                Update Your Booked Room <span className="pl-4 text-3xl text-primary">{roomData?.room_title}</span>
                             </h3>
+                            <button
+                                className="p-1 z-[1000] ml-auto border-0 text-black opacity-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                onClick={() => setShowUpdateModal(false)}
+                            >
+                                <span className="text-black h-6 w-6 opacity-50 text-2xl block outline-none focus:outline-none">
+                                    ×
+                                </span>
+                            </button>
                         </div>
-                        <div className="h-[40vh] relative px-4 pt-2 flex-auto overflow-scroll">
+                        <div className="relative px-4 pt-2 overflow-scroll">
                             <div className="p-2 overflow-hidden">
                                 <form onSubmit={handleSubmit}>
                                     <div className="flex justify-center gap-6">
@@ -119,18 +143,25 @@ const UpdateBooking = ({ booking }) => {
                                             </select>
                                         </label>
                                     </div>
-                                    <input
-                                        className="btn w-full bg-[#1dd100] text-white hover:bg-[#1dd100ac] disabled:bg-[#1dd1003c]" value={'Update Booking'} type="submit" />
+                                    <input className="btn w-full bg-[#1dd100] text-white hover:bg-[#1dd100ac] disabled:bg-[#1dd1003c]" value={'Update Booking'} type="submit" />
                                 </form>
-                                <form method="dialog">
-                                    <input type="submit" className=" btn mt-5 w-full bg-red-600 text-white hover:bg-red-300" value={'Exit From Here'} />
-                                </form>
-
                             </div>
                         </div>
                     </div>
-                    {/*footer*/}
-                    {/* <div className="bg-white flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                </div>
+            </div >
+            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+    );
+}
+export default UpdateBooking;
+
+
+{/* <form method="dialog">
+                                    <input type="submit" className=" btn mt-5 w-full bg-red-600 text-white hover:bg-red-300" value={'Exit From Here'} />
+                                </form> */}
+
+{/* <div className="bg-white flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                         <button
                             className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button"
@@ -139,10 +170,3 @@ const UpdateBooking = ({ booking }) => {
                             Close
                         </button>
                     </div> */}
-                </div>
-            </div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-    );
-}
-export default UpdateBooking;

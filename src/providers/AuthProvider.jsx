@@ -56,22 +56,22 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, curUser=>{
             const loggedUser = {email: user?.email || curUser?.email};
             setLoading(false);
-            console.log("from observer: ", loggedUser);
+            // console.log("from observer: ", loggedUser);
             if(curUser){
                 axios.post('https://server-seven-gamma-70.vercel.app/jwt', loggedUser, {withCredentials: true})
                 .then(res=> {
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 .catch(error=> {
-                    console.log(error);
+                    // console.log(error);
                 })
             }else{
                 axios.post('https://server-seven-gamma-70.vercel.app/logout', loggedUser, {withCredentials: true})
                 .then(res=> {
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 .catch(error=>{
-                    console.log(error);
+                    // console.log(error);
                 })
             }
             setUser(curUser);

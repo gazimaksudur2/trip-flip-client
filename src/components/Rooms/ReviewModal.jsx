@@ -14,6 +14,7 @@ const ReviewModal = ({ setShowModal, id }) => {
             console.log(error.message);
         })
     },[]);
+    // console.log(reviews.rating);
 
     return (
         <div>

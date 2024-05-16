@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Footer from "../Footer";
+import Swal from "sweetalert2";
 
 const BookModal = ({ setShowBookModal, special_offers, fare, roomId }) => {
     const { user } = useContext(AuthContext);
@@ -59,16 +61,31 @@ const BookModal = ({ setShowBookModal, special_offers, fare, roomId }) => {
         const cardNo = e.target.card.value;
         const phoneNo = e.target.phone.value;
         const code = e.target.code.value;
-        const bookedAt = new Date().toISOString();
+        const bookedAt = new Date().toISOString().slice(0,10);
         setShowBookModal(false);
         console.log('form submitted!!!',checkin, checkout,  cardNo, phoneNo, code, plan);
 
         axios.post('https://server-seven-gamma-70.vercel.app/bookings',{bookedAt, checkin, checkout, plan, roomId, grandTotal, phoneNo, cardNo, code, client: user.displayName, clientPhoto: user.photoURL, clientEmail: user.email})
             .then(res=>{
                 console.log(res);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Your Booking is Created Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
             .catch(error=>{
                 console.log(error.message);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Occured!!",
+                    Footer: error.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
     }
 

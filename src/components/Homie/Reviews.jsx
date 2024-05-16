@@ -13,19 +13,32 @@ import axios from 'axios';
 
 const Reviews = () => {
     const [data, setData] = useState();
+    // const [showdata, setshowData] = useState([]);
 
     useEffect(() => {
         axios.get('https://server-seven-gamma-70.vercel.app/reviews')
-            .then(res=>{
+            .then(res => {
                 // console.log(res.data);
                 setData(res.data);
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error.message);
             })
-    }, [])
+    }, []);
 
-    // console.log(data);
+    // useEffect(() => {
+    //     if (data) {
+    //         setshowData([]);
+    //         const value = parseInt(Math.random() * data?.length);
+    //         for (let x = 0; x < 6 ; x++) {
+    //             setshowData([data[(value + x)%data?.length], ...showdata]);
+    //             console.log("hello world!!");
+    //         }
+    //         console.log(showdata, value);
+    //     }
+    // }, [data]);
+
+    // console.log(data && data?.length);
     return (
         <div>
             <section className="relative lg:py-10 lg:w-[80%] mx-auto">
@@ -52,7 +65,7 @@ const Reviews = () => {
                         className="mySwiper w-full h-[60vh] bg-white rounded-3xl"
                     >
                         {
-                            data && data.slice(0,5)?.map(each => (<SwiperSlide key={each._id} className='relative bg-blue-50'>
+                            data && data.slice(data?.length-6, data?.length)?.map(each => (<SwiperSlide key={each._id} className='relative bg-blue-50'>
                                 <ReviewTestimonial each={each} />
                             </SwiperSlide>))
                         }

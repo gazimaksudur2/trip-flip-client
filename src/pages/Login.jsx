@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const reg_here = "Don't have an Account?"; const { signIn, googleSignIn, githubSignIn, twitterSignIn } = useContext(AuthContext);
@@ -21,10 +22,25 @@ const Login = () => {
         signIn(email, password)
             .then(res => {
                 // console.log("local : ",res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Logged In Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 
@@ -32,10 +48,25 @@ const Login = () => {
         googleSignIn()
             .then(res => {
                 console.log(res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Logged In Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
-                console.log(error.message);
+                console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 
@@ -43,10 +74,25 @@ const Login = () => {
         githubSignIn()
             .then(res => {
                 console.log(res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Logged In Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
-                console.log(error.message);
+                console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 
@@ -54,10 +100,25 @@ const Login = () => {
         twitterSignIn()
             .then(res => {
                 console.log(res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Logged In Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
-                console.log(error.message);
+                console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 

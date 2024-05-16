@@ -2,10 +2,11 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const reg_here = "Don't have an Account?";
-    const { user, createUser, addNameUrl, googleSignIn, githubSignIn, twitterSignIn } = useContext(AuthContext);
+    const { createUser, addNameUrl, googleSignIn, githubSignIn, twitterSignIn } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
     const [showConfPass, setShowConfPass] = useState(false);
     const navigate = useNavigate();
@@ -25,13 +26,28 @@ const Register = () => {
 
         createUser(email, password)
             .then(res => {
-                console.log("local : ", res.user);
-                console.log("from observer: ", user);
+                // console.log("local : ", res.user);
+                // console.log("from observer: ", user);
                 addNameUrl(name, url);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Registered Your Account Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 
@@ -39,10 +55,25 @@ const Register = () => {
         googleSignIn()
             .then(res => {
                 console.log(res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Registered Your Account Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
-                console.log(error.message);
+                console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 
@@ -50,10 +81,25 @@ const Register = () => {
         githubSignIn()
             .then(res => {
                 console.log(res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Registered Your Account Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
-                console.log(error.message);
+                console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 
@@ -61,10 +107,25 @@ const Register = () => {
         twitterSignIn()
             .then(res => {
                 console.log(res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Registered Your Account Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(error => {
-                console.log(error.message);
+                console.log(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Error Encountered!!",
+                    showConfirmButton: false,
+                    footer: error.message,
+                    timer: 1500
+                });
             })
     }
 

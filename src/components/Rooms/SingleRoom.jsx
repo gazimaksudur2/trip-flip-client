@@ -1,33 +1,54 @@
-import React, { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import ReviewModal from "./ReviewModal";
 import BookModal from "./BookModal";
+import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
 
 const SingleRoom = () => {
-    const roomData = useLoaderData();
+    const { user } = useContext(AuthContext);
+    const locate = useLocation();
     const [showModal, setShowModal] = React.useState(false);
     const [showBookModal, setShowBookModal] = React.useState(false);
-    // const [roomData, setRoomData] = useState({});
+    const [roomData, setRoomData] = useState({});
+
+    const [room_images, setroom_images] = useState([]);
+
+    useEffect(()=>{
+        roomData && setroom_images(roomData?.room_images);
+        // roomData && setspecial_offers(roomData?.special_offers);
+        // roomData && setfeatures(roomData?.features);
+        // roomData && setfacilities(roomData?.facilities);
+    },[roomData]);
+
+    
     // const room_images = [];
-    // useEffect(()=>{
-    //     axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${locate.pathname.substring(locate.pathname.indexOf('/:')+2)}`)
-    //         .then(res=>{
-    //             setRoomData(res);
-    //         })
-    //         .catch(error=>{
-    //             console.log(error.message);
-    // })
-    // fetch(`http://localhost:5173/rooms/:${locate.pathname.substring(locate.pathname.indexOf('/:')+2)}`)
-    //     .then(res=>res.json())
-    //     .then(data=> setRoomData(data))
-    // },[]);
+    // const special_offers = [];
+    // const features = [];
+    // const facilities = [];
 
-    const { _id, room_title, room_description, room_size, price_per_night, availability, facilities, room_images, special_offers, features } = roomData.data || {};
+    // console.log(locate.pathname.substring(locate.pathname.indexOf('/single')+12));
+    useEffect(()=>{
+        axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${locate.pathname.substring(locate.pathname.indexOf('/single')+12)}?email=${user.email}`)
+            .then(res=>{
+                // console.log(res.data);
+                setRoomData(res.data);
+            })
+            .catch(error=>{
+                console.log(error.message);
+    })
+    },[]);
 
-    const [val, setVal] = useState((parseInt(Math.random() * 10)) % (room_images.length));
-    // console.log(roomData.data, " ", room_images.length);  
-    // console.log(special_offers);  
+    // , room_images, facilities, special_offers, features 
 
+    const { _id, room_title, room_description, room_size, price_per_night, availability , facilities, special_offers, features } = roomData;
+
+    const [val, setVal] = useState(0);
+
+    useEffect(()=>{
+        setVal((parseInt(Math.random() * 10)) % (room_images?.length));
+    },[roomData, room_images]);
+    
 
     const handleInc = () => {
         setVal((val + 1) % (room_images.length));
@@ -80,7 +101,7 @@ const SingleRoom = () => {
                 <div className="container px-6 py-10 mx-auto">
                     <div className="lg:-mx-6 lg:flex lg:items-center">
                         <div className="relative lg:w-1/2 lg:mx-6 w-full h-96 lg:h-[36rem]">
-                            <img className="object-cover object-center w-full min-h-full rounded-lg" src={room_images[val]} alt="images" />
+                            <img className="object-cover object-center w-full min-h-full rounded-lg" src={room_images && room_images[val]} alt="images" />
                             <div className="absolute bottom-5 right-5 z-10 flex items-center justify-between mt-12 lg:justify-start">
                                 <button onClick={handleDec} title="left arrow" className="p-2 text-gray-800 transition-colors duration-300 border rounded-full bg-gray-900 rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -116,7 +137,7 @@ const SingleRoom = () => {
                                         <h3 className="font-semibold text-gray-200 font-source">Special Offers: </h3>
                                         <ul className="list-disc px-4">
                                             {
-                                                special_offers.map((offr, idx) => <li className="text-gray-400" key={idx}>{offr.offer} {offr.value}% off</li>)
+                                                special_offers?.map((offr, idx) => <li className="text-gray-400" key={idx}>{offr.offer} {offr.value}% off</li>)
                                             }
                                         </ul>
                                     </div>
@@ -124,7 +145,7 @@ const SingleRoom = () => {
                                         <h3 className="font-semibold text-gray-200 font-source">Awesome features: </h3>
                                         <ul className="list-disc px-4">
                                             {
-                                                features.map((feature, idx) => <li className="text-gray-400" key={idx}>{feature}</li>)
+                                                features?.map((feature, idx) => <li className="text-gray-400" key={idx}>{feature}</li>)
                                             }
                                         </ul>
                                     </div>
@@ -132,7 +153,7 @@ const SingleRoom = () => {
                                         <h3 className="font-semibold text-gray-200 font-source">Extra Facilities : </h3>
                                         <ul className="list-disc px-4 gird grid-cols-2 gap-3">
                                             {
-                                                facilities.map((faci, idx) => <li className="text-gray-400" key={idx}>{faci}</li>)
+                                                facilities?.map((faci, idx) => <li className="text-gray-400" key={idx}>{faci}</li>)
                                             }
                                         </ul>
                                     </div>

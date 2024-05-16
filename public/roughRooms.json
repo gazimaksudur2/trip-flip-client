@@ -1,456 +1,584 @@
-[
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ee8"
-    },
-    "id": 1,
-    "room_title": "Deluxe Room with Ocean View",
-    "price_per_night": 200,
-    "room_size": "400 sqft",
-    "availability": 5,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/e642f9dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/28376c1e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/f595f09a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/6c3a2e66.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/e642f9dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Free WiFi", "Swimming Pool", "Gym", "Free Breakfast"],
-    "customer_ratings": 4.5,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "First Time Booking",
-        "value": 10
-      },
-      {
-        "offer": "For Children",
-        "value": 50
-      }
-    ],
-    "features": ["Scenic Beauty", "Oceanfront Location"],
-    "card_img": "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/e642f9dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "The Deluxe Room with Ocean View offers a luxurious stay with breathtaking views of the ocean. This spacious room spans 400 square feet and features modern amenities for your comfort. With a plush king-size bed, elegant furnishings, and a private balcony overlooking the azure waters, this room is perfect for couples seeking a romantic getaway or travelers looking to unwind in style. Enjoy complimentary breakfast each morning and rejuvenate with a discount on spa services during your stay."
+[{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ee8"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ee9"
+  "id": 1,
+  "room_title": "Deluxe Room with Ocean View",
+  "price_per_night": 200,
+  "room_size": "400 sqft",
+  "availability": 5,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/e642f9dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/28376c1e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/f595f09a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/6c3a2e66.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/e642f9dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Free WiFi",
+    "Swimming Pool",
+    "Gym",
+    "Free Breakfast"
+  ],
+  "customer_ratings": 4.5,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "First Time Booking",
+      "value": 10
     },
-    "id": 2,
-    "room_title": "Executive Suite",
-    "price_per_night": 300,
-    "room_size": "600 sqft",
-    "availability": 3,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/03b5f12a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/cd222ffb.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/7c511180.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/a85578b3.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/03b5f12a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Free WiFi", "Laundry", "Parking", "Gym"],
-    "customer_ratings": 4.2,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "For Couple",
-        "value": 20
-      },
-      {
-        "offer": "Native Countrymen Traveler",
-        "value": 30
-      }
-    ],
-    "features": ["City View", "Spacious Living Areas"],
-    "card_img": "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/03b5f12a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Experience unparalleled luxury in our Executive Suite. Spanning 600 square feet, this suite offers spacious living areas and stunning city views. The suite features a separate bedroom with a king-size bed, a stylish living room, and a well-appointed bathroom with deluxe amenities. Perfect for business travelers or guests seeking extra space and comfort, the Executive Suite provides a serene retreat in the heart of the city."
+    {
+      "offer": "For Children",
+      "value": 50
+    }
+  ],
+  "features": [
+    "Scenic Beauty",
+    "Oceanfront Location"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/1000000/20000/14500/14445/e642f9dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "The Deluxe Room with Ocean View offers a luxurious stay with breathtaking views of the ocean. This spacious room spans 400 square feet and features modern amenities for your comfort. With a plush king-size bed, elegant furnishings, and a private balcony overlooking the azure waters, this room is perfect for couples seeking a romantic getaway or travelers looking to unwind in style. Enjoy complimentary breakfast each morning and rejuvenate with a discount on spa services during your stay."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ee9"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988eea"
+  "id": 2,
+  "room_title": "Executive Suite",
+  "price_per_night": 300,
+  "room_size": "600 sqft",
+  "availability": 3,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/03b5f12a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/cd222ffb.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/7c511180.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/a85578b3.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/03b5f12a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Free WiFi",
+    "Laundry",
+    "Parking",
+    "Gym"
+  ],
+  "customer_ratings": 4.2,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "For Couple",
+      "value": 20
     },
-    "id": 3,
-    "room_title": "Family Suite",
-    "price_per_night": 400,
-    "room_size": "800 sqft",
-    "availability": 2,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/1000000/10000/600/596/bab67b09.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/600/596/1a34b629.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/600/596/92a4e1b5.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/600/596/65771265.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/1000000/10000/600/596/bab67b09.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Free WiFi", "Parking", "Gym", "Free Breakfast"],
-    "customer_ratings": 4.8,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "For Children",
-        "value": 50
-      },
-      {
-        "offer": "First Time Booking",
-        "value": 10
-      }
-    ],
-    "features": ["Spacious Living Areas", "Kids-Friendly Environment"],
-    "card_img": "https://images.trvl-media.com/lodging/1000000/10000/600/596/bab67b09.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Our Family Suite is designed to accommodate the whole family in comfort and style. With 800 square feet of space, this suite offers ample room for relaxation and entertainment. The suite features a master bedroom with a king-size bed, a separate children's bedroom with bunk beds, and a spacious living area for family gatherings. Enjoy special perks for kids, including discounted rates and complimentary amenities. Create lasting memories with your loved ones in our Family Suite."
+    {
+      "offer": "Native Countrymen Traveler",
+      "value": 30
+    }
+  ],
+  "features": [
+    "City View",
+    "Spacious Living Areas"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/1000000/10000/6600/6549/03b5f12a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Experience unparalleled luxury in our Executive Suite. Spanning 600 square feet, this suite offers spacious living areas and stunning city views. The suite features a separate bedroom with a king-size bed, a stylish living room, and a well-appointed bathroom with deluxe amenities. Perfect for business travelers or guests seeking extra space and comfort, the Executive Suite provides a serene retreat in the heart of the city."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988eea"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988eeb"
+  "id": 3,
+  "room_title": "Family Suite",
+  "price_per_night": 400,
+  "room_size": "800 sqft",
+  "availability": 2,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/1000000/10000/600/596/bab67b09.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/600/596/1a34b629.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/600/596/92a4e1b5.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/600/596/65771265.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/1000000/10000/600/596/bab67b09.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Free WiFi",
+    "Parking",
+    "Gym",
+    "Free Breakfast"
+  ],
+  "customer_ratings": 4.8,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "For Children",
+      "value": 50
     },
-    "id": 4,
-    "room_title": "Luxury Penthouse Suite",
-    "price_per_night": 1000,
-    "room_size": "1500 sqft",
-    "availability": 1,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/6aeb120e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/64dd851e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/93f3943b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/571671d5.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/6aeb120e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Free WiFi", "Pool", "Laundry", "Parking"],
-    "customer_ratings": 4.9,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "For Couple",
-        "value": 20
-      },
-      {
-        "offer": "24/7 Butler Service",
-        "value": 24
-      }
-    ],
-    "features": ["Panoramic City Views", "Private Terrace"],
-    "card_img": "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/6aeb120e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Indulge in the epitome of luxury with our opulent Luxury Penthouse Suite. Spanning an impressive 1500 square feet, this lavish suite offers panoramic views of the city skyline. With exquisite furnishings, a grand master bedroom, a private terrace, and exclusive access to personalized butler service, this suite redefines the art of living in style. Treat yourself to complimentary champagne upon arrival and experience unparalleled luxury throughout your stay."
+    {
+      "offer": "First Time Booking",
+      "value": 10
+    }
+  ],
+  "features": [
+    "Spacious Living Areas",
+    "Kids-Friendly Environment"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/1000000/10000/600/596/bab67b09.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Our Family Suite is designed to accommodate the whole family in comfort and style. With 800 square feet of space, this suite offers ample room for relaxation and entertainment. The suite features a master bedroom with a king-size bed, a separate children's bedroom with bunk beds, and a spacious living area for family gatherings. Enjoy special perks for kids, including discounted rates and complimentary amenities. Create lasting memories with your loved ones in our Family Suite."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988eeb"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988eec"
+  "id": 4,
+  "room_title": "Luxury Penthouse Suite",
+  "price_per_night": 1000,
+  "room_size": "1500 sqft",
+  "availability": 1,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/6aeb120e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/64dd851e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/93f3943b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/571671d5.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/6aeb120e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Free WiFi",
+    "Pool",
+    "Laundry",
+    "Parking"
+  ],
+  "customer_ratings": 4.9,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "For Couple",
+      "value": 20
     },
-    "id": 5,
-    "room_title": "Cozy Studio Apartment",
-    "price_per_night": 80,
-    "room_size": "300 sqft",
-    "availability": 3,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/w2879h1920x1y0-40d58a42.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/5b6a7a3a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/9bfd3f67.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/18e950be.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/9bfd3f67.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Free WiFi", "Gym", "Parking", "Free Breakfast"],
-    "customer_ratings": 4,
-    "review_count": 0,
-    "special_offers": [],
-    "features": ["Budget-Friendly", "Urban Charm"],
-    "card_img": "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/9bfd3f67.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Discover comfort and convenience in our Cozy Studio Apartment. With 300 square feet of space, this intimate retreat is ideal for solo travelers or couples seeking a budget-friendly accommodation option. The studio features a comfortable queen-size bed, a compact kitchenette, and a cozy seating area. Enjoy a relaxing stay with all the essential amenities at your fingertips. Experience the charm of urban living in our Cozy Studio Apartment."
+    {
+      "offer": "24/7 Butler Service",
+      "value": 24
+    }
+  ],
+  "features": [
+    "Panoramic City Views",
+    "Private Terrace"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/1000000/50000/46400/46340/6aeb120e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Indulge in the epitome of luxury with our opulent Luxury Penthouse Suite. Spanning an impressive 1500 square feet, this lavish suite offers panoramic views of the city skyline. With exquisite furnishings, a grand master bedroom, a private terrace, and exclusive access to personalized butler service, this suite redefines the art of living in style. Treat yourself to complimentary champagne upon arrival and experience unparalleled luxury throughout your stay."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988eec"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988eed"
-    },
-    "id": 6,
-    "room_title": "Executive Business Room",
-    "price_per_night": 150,
-    "room_size": "350 sqft",
-    "availability": 4,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/c00c5548.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/563597fd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/5cde0ace.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/01a859bd.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/c00c5548.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Free High-Speed Wi-Fi", "Complimentary Airport Shuttle"],
-    "customer_ratings": 4.8,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "For Business Travelers",
-        "value": 10
-      },
-      {
-        "offer": "Weekend Stay Discount",
-        "value": 15
-      }
-    ],
-    "features": ["Ergonomic Workstation", "Convenient Amenities"],
-    "card_img": "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/c00c5548.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Elevate your business trip with our Executive Business Room. Designed for discerning travelers, this sophisticated room offers 350 square feet of well-appointed space. Unwind after a long day of meetings in the plush king-size bed or catch up on work at the ergonomic workstation. Enjoy complimentary high-speed Wi-Fi access and convenient amenities tailored to meet the needs of business travelers. Experience seamless travel with our complimentary airport shuttle service."
+  "id": 5,
+  "room_title": "Cozy Studio Apartment",
+  "price_per_night": 80,
+  "room_size": "300 sqft",
+  "availability": 3,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/w2879h1920x1y0-40d58a42.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/5b6a7a3a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/9bfd3f67.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/18e950be.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/9bfd3f67.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Free WiFi",
+    "Gym",
+    "Parking",
+    "Free Breakfast"
+  ],
+  "customer_ratings": 4,
+  "reviews": [],
+  "special_offers": [],
+  "features": [
+    "Budget-Friendly",
+    "Urban Charm"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/70000000/69410000/69403000/69402990/9bfd3f67.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Discover comfort and convenience in our Cozy Studio Apartment. With 300 square feet of space, this intimate retreat is ideal for solo travelers or couples seeking a budget-friendly accommodation option. The studio features a comfortable queen-size bed, a compact kitchenette, and a cozy seating area. Enjoy a relaxing stay with all the essential amenities at your fingertips. Experience the charm of urban living in our Cozy Studio Apartment."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988eed"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988eee"
+  "id": 6,
+  "room_title": "Executive Business Room",
+  "price_per_night": 150,
+  "room_size": "350 sqft",
+  "availability": 4,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/c00c5548.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/563597fd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/5cde0ace.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/01a859bd.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/c00c5548.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Free High-Speed Wi-Fi",
+    "Complimentary Airport Shuttle"
+  ],
+  "customer_ratings": 4.8,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "For Business Travelers",
+      "value": 10
     },
-    "id": 7,
-    "room_title": "Romantic Honeymoon Suite",
-    "price_per_night": 250,
-    "room_size": "500 sqft",
-    "availability": 2,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/4da02c91.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/9e9267db.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/4142f9cb.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/b14014c5.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/9e9267db.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Private Whirlpool Tub", "Balcony with Scenic Views"],
-    "customer_ratings": 4.9,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "Candlelit Dinner for Two",
-        "value": 20
-      },
-      {
-        "offer": "Late Checkout",
-        "value": 25
-      }
-    ],
-    "features": ["Whirlpool Tub", "Balcony with Scenic Views"],
-    "card_img": "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/9e9267db.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Celebrate love and romance in our Romantic Honeymoon Suite. This enchanting suite is designed for couples seeking a memorable escape. With 500 square feet of luxurious space, the suite features a sumptuous king-size bed, a private whirlpool tub, and a balcony overlooking scenic views. Indulge in a candlelit dinner for two served in the privacy of your suite and enjoy a leisurely late checkout. Create cherished moments together in our Romantic Honeymoon Suite."
+    {
+      "offer": "Weekend Stay Discount",
+      "value": 15
+    }
+  ],
+  "features": [
+    "Ergonomic Workstation",
+    "Convenient Amenities"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/2000000/1620000/1614000/1613996/c00c5548.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Elevate your business trip with our Executive Business Room. Designed for discerning travelers, this sophisticated room offers 350 square feet of well-appointed space. Unwind after a long day of meetings in the plush king-size bed or catch up on work at the ergonomic workstation. Enjoy complimentary high-speed Wi-Fi access and convenient amenities tailored to meet the needs of business travelers. Experience seamless travel with our complimentary airport shuttle service."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988eee"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988eef"
+  "id": 7,
+  "room_title": "Romantic Honeymoon Suite",
+  "price_per_night": 250,
+  "room_size": "500 sqft",
+  "availability": 2,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/4da02c91.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/9e9267db.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/4142f9cb.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/b14014c5.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/9e9267db.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Private Whirlpool Tub",
+    "Balcony with Scenic Views"
+  ],
+  "customer_ratings": 4.9,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "Candlelit Dinner for Two",
+      "value": 20
     },
-    "id": 8,
-    "room_title": "Classic Twin Room",
-    "price_per_night": 120,
-    "room_size": "400 sqft",
-    "availability": 3,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/6be88962.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/765bb8ab.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/4e8ed4dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/c4ad66cd.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/6be88962.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Complimentary Breakfast", "Minibar"],
-    "customer_ratings": 4.5,
-    "review_count": 0,
-    "special_offers": [],
-    "features": ["Premium Bedding", "Flat-screen TV"],
-    "card_img": "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/6be88962.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Experience comfort and convenience in our Classic Twin Room. Perfect for friends or colleagues traveling together, this room offers 400 square feet of well-designed space. Each twin bed is outfitted with premium bedding for a restful night's sleep. Whether you're visiting for business or leisure, our Classic Twin Room provides all the essential amenities for a comfortable stay. Enjoy a hassle-free experience and make lasting memories in our welcoming accommodation."
+    {
+      "offer": "Late Checkout",
+      "value": 25
+    }
+  ],
+  "features": [
+    "Whirlpool Tub",
+    "Balcony with Scenic Views"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/79000000/78560000/78550400/78550383/9e9267db.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Celebrate love and romance in our Romantic Honeymoon Suite. This enchanting suite is designed for couples seeking a memorable escape. With 500 square feet of luxurious space, the suite features a sumptuous king-size bed, a private whirlpool tub, and a balcony overlooking scenic views. Indulge in a candlelit dinner for two served in the privacy of your suite and enjoy a leisurely late checkout. Create cherished moments together in our Romantic Honeymoon Suite."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988eef"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ef0"
-    },
-    "id": 9,
-    "room_title": "Luxury Spa Suite",
-    "price_per_night": 350,
-    "room_size": "700 sqft",
-    "availability": 1,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/73d48e97.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/5f209535.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/daa759e6.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/1b4f2322.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/73d48e97.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Complimentary Spa Treatment", "Exclusive Spa Facilities"],
-    "customer_ratings": 4.7,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "Weekday Stay Discount",
-        "value": 15
-      },
-      {
-        "offer": "Complimentary Spa Treatment",
-        "value": 10
-      }
-    ],
-    "features": ["Private Spa Area", "Sauna"],
-    "card_img": "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/73d48e97.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Indulge in ultimate relaxation in our Luxury Spa Suite. This serene retreat offers 700 square feet of tranquility and comfort. Unwind in the luxurious king-size bed or pamper yourself in the private spa area complete with a whirlpool tub and sauna. Guests staying in the Luxury Spa Suite enjoy complimentary spa treatments and access to exclusive spa facilities throughout their stay. Treat yourself to a rejuvenating escape in our Luxury Spa Suite."
+  "id": 8,
+  "room_title": "Classic Twin Room",
+  "price_per_night": 120,
+  "room_size": "400 sqft",
+  "availability": 3,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/6be88962.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/765bb8ab.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/4e8ed4dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/c4ad66cd.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/6be88962.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Complimentary Breakfast",
+    "Minibar"
+  ],
+  "customer_ratings": 4.5,
+  "reviews": [],
+  "special_offers": [],
+  "features": [
+    "Premium Bedding",
+    "Flat-screen TV"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/1000000/210000/200600/200564/6be88962.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Experience comfort and convenience in our Classic Twin Room. Perfect for friends or colleagues traveling together, this room offers 400 square feet of well-designed space. Each twin bed is outfitted with premium bedding for a restful night's sleep. Whether you're visiting for business or leisure, our Classic Twin Room provides all the essential amenities for a comfortable stay. Enjoy a hassle-free experience and make lasting memories in our welcoming accommodation."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ef0"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ef1"
+  "id": 9,
+  "room_title": "Luxury Spa Suite",
+  "price_per_night": 350,
+  "room_size": "700 sqft",
+  "availability": 1,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/73d48e97.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/5f209535.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/daa759e6.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/1b4f2322.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/73d48e97.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Complimentary Spa Treatment",
+    "Exclusive Spa Facilities"
+  ],
+  "customer_ratings": 4.7,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "Weekday Stay Discount",
+      "value": 15
     },
-    "id": 10,
-    "room_title": "Classic Twin Room",
-    "price_per_night": 150,
-    "room_size": "300 sqft",
-    "availability": 8,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/28fd76a3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/770ac647.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/2291963b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/7e16c62c.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/28fd76a3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "facilities": ["Flat-screen TV", "Minibar"],
-    "customer_ratings": 4.6,
-    "review_count": 0,
-    "special_offers": [
-      {
-        "offer": "for Weekday Stays",
-        "value": 10
-      }
-    ],
-    "features": ["Modern Amenities", "Comfortable Twin Beds"],
-    "card_img": "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/28fd76a3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "The Classic Twin Room offers a cozy retreat for travelers seeking comfort and convenience. With 300 square feet of space, this room features two comfortable twin beds, ideal for friends or colleagues traveling together. Enjoy modern amenities, including a flat-screen TV, minibar, and work desk. Whether you're here for business or leisure, our Classic Twin Room provides everything you need for a pleasant stay."
+    {
+      "offer": "Complimentary Spa Treatment",
+      "value": 10
+    }
+  ],
+  "features": [
+    "Private Spa Area",
+    "Sauna"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/60000000/59670000/59660500/59660442/73d48e97.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Indulge in ultimate relaxation in our Luxury Spa Suite. This serene retreat offers 700 square feet of tranquility and comfort. Unwind in the luxurious king-size bed or pamper yourself in the private spa area complete with a whirlpool tub and sauna. Guests staying in the Luxury Spa Suite enjoy complimentary spa treatments and access to exclusive spa facilities throughout their stay. Treat yourself to a rejuvenating escape in our Luxury Spa Suite."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ef1"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ef2"
-    },
-    "id": 11,
-    "room_title": "Elegant Loft Suite",
-    "price_per_night": 450,
-    "room_size": "700 sqft",
-    "availability": 3,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/2bbfd040.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/a3b95dda.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/d8ec973a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/f29ee148.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/2bbfd040.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "special_offers": {
-      "first_time_booking": 10,
-      "couple_discount": 20
-    },
-    "facilities": ["Free WiFi", "Pool", "Gym", "Free Breakfast"],
-    "customer_ratings": 4.5,
-    "review_count": 0,
-    "features": ["Panoramic City Views", "Contemporary Design"],
-    "card_img": "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/a3b95dda.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Our Elegant Loft Suite offers a luxurious stay with contemporary design, panoramic city views, and premium amenities. Enjoy spacious interiors, a king-size bed, and complimentary airport transfers for a seamless travel experience."
+  "id": 10,
+  "room_title": "Classic Twin Room",
+  "price_per_night": 150,
+  "room_size": "300 sqft",
+  "availability": 8,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/28fd76a3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/770ac647.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/2291963b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/7e16c62c.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/28fd76a3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "facilities": [
+    "Flat-screen TV",
+    "Minibar"
+  ],
+  "customer_ratings": 4.6,
+  "reviews": [],
+  "special_offers": [
+    {
+      "offer": "for Weekday Stays",
+      "value": 10
+    }
+  ],
+  "features": [
+    "Modern Amenities",
+    "Comfortable Twin Beds"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/1000000/470000/460400/460350/28fd76a3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "The Classic Twin Room offers a cozy retreat for travelers seeking comfort and convenience. With 300 square feet of space, this room features two comfortable twin beds, ideal for friends or colleagues traveling together. Enjoy modern amenities, including a flat-screen TV, minibar, and work desk. Whether you're here for business or leisure, our Classic Twin Room provides everything you need for a pleasant stay."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ef2"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ef3"
+  "id": 11,
+  "room_title": "Elegant Loft Suite",
+  "price_per_night": 450,
+  "room_size": "700 sqft",
+  "availability": 3,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/2bbfd040.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/a3b95dda.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/d8ec973a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/f29ee148.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/2bbfd040.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "special_offers": [
+    {
+      "offer": "first_time_booking",
+      "value": 10
     },
-    "id": 12,
-    "room_title": "Cozy Cabin Retreat",
-    "price_per_night": 120,
-    "room_size": "250 sqft",
-    "availability": 5,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/42b68315.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/b061ac96.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/a1a85c0b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/0f01f5f1.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/b061ac96.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "special_offers": {
-      "children_discount": 50,
-      "foreigner_discount": 25
-    },
-    "facilities": ["Laundry", "Parking", "Scenic Beauty", "Near to Nature"],
-    "customer_ratings": 4.2,
-    "review_count": 0,
-    "features": ["Wood-burning Fireplace", "Private Patio"],
-    "card_img": "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/a1a85c0b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Escape to our Cozy Cabin Retreat for a tranquil getaway surrounded by nature. Unwind in rustic elegance, explore nearby hiking trails, and reconnect with nature in our private patio overlooking the forest."
+    {
+      "offer": "couple_discount",
+      "value": 20
+    }
+  ],
+  "facilities": [
+    "Free WiFi",
+    "Pool",
+    "Gym",
+    "Free Breakfast"
+  ],
+  "customer_ratings": 4.5,
+  "reviews": [],
+  "features": [
+    "Panoramic City Views",
+    "Contemporary Design"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/99000000/98530000/98523500/98523484/a3b95dda.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Our Elegant Loft Suite offers a luxurious stay with contemporary design, panoramic city views, and premium amenities. Enjoy spacious interiors, a king-size bed, and complimentary airport transfers for a seamless travel experience."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ef3"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ef4"
+  "id": 12,
+  "room_title": "Cozy Cabin Retreat",
+  "price_per_night": 120,
+  "room_size": "250 sqft",
+  "availability": 5,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/42b68315.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/b061ac96.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/a1a85c0b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/0f01f5f1.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/b061ac96.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "special_offers": [
+    {
+      "offer": "children_discount",
+      "value": 50
     },
-    "id": 13,
-    "room_title": "Grand Presidential Suite",
-    "price_per_night": 800,
-    "room_size": "1200 sqft",
-    "availability": 1,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/a94e5a40.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e9e8753a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e1714175.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/bd4c5476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/a737cc55.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e1714175.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "special_offers": {
-      "personal_butler_service": 40,
-      "club_lounge_access": 35
-    },
-    "facilities": [
-      "Personal Butler Service",
-      "Exclusive Access to Club Lounge",
-      "Jacuzzi Tub",
-      "Spacious Living Area"
-    ],
-    "customer_ratings": 4.9,
-    "review_count": 0,
-    "features": ["Opulent Furnishings", "Breathtaking City Views"],
-    "card_img": "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e1714175.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Experience ultimate luxury in our Grand Presidential Suite, a palatial retreat fit for royalty. Indulge in unrivaled comfort, personalized butler service, and exclusive access to our prestigious Club Lounge."
+    {
+      "offer": "foreigner_discount",
+      "value": 25
+    }
+  ],
+  "facilities": [
+    "Laundry",
+    "Parking",
+    "Scenic Beauty",
+    "Near to Nature"
+  ],
+  "customer_ratings": 4.2,
+  "reviews": [],
+  "features": [
+    "Wood-burning Fireplace",
+    "Private Patio"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/1000000/10000/5900/5824/a1a85c0b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Escape to our Cozy Cabin Retreat for a tranquil getaway surrounded by nature. Unwind in rustic elegance, explore nearby hiking trails, and reconnect with nature in our private patio overlooking the forest."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ef4"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ef5"
+  "id": 13,
+  "room_title": "Grand Presidential Suite",
+  "price_per_night": 800,
+  "room_size": "1200 sqft",
+  "availability": 1,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/a94e5a40.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e9e8753a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e1714175.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/bd4c5476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/a737cc55.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e1714175.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "special_offers": [
+    {
+      "offer": "personal_butler_service",
+      "value": 40
     },
-    "id": 14,
-    "room_title": "Seaside Bungalow",
-    "price_per_night": 350,
-    "room_size": "500 sqft",
-    "availability": 4,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/3e53f7e0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/46a9b979.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/bc5ecd98.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/ca36d859.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/ca36d859.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "special_offers": {
-      "romantic_couple_discount": 20,
-      "family_adventure_discount": 15
-    },
-    "facilities": ["Pool", "Private Terrace", "Fireplace", "Cozy Sitting Area"],
-    "customer_ratings": 4.6,
-    "review_count": 0,
-    "features": ["Panoramic Sea Views", "Private Terrace"],
-    "card_img": "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/46a9b979.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Embrace coastal living in our Seaside Bungalow, nestled along the pristine shores of the ocean. Listen to the soothing sound of the waves and feel the gentle ocean breeze as you unwind in this idyllic retreat."
+    {
+      "offer": "club_lounge_access",
+      "value": 35
+    }
+  ],
+  "facilities": [
+    "Personal Butler Service",
+    "Exclusive Access to Club Lounge",
+    "Jacuzzi Tub",
+    "Spacious Living Area"
+  ],
+  "customer_ratings": 4.9,
+  "reviews": [],
+  "features": [
+    "Opulent Furnishings",
+    "Breathtaking City Views"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/4000000/3510000/3507300/3507293/e1714175.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Experience ultimate luxury in our Grand Presidential Suite, a palatial retreat fit for royalty. Indulge in unrivaled comfort, personalized butler service, and exclusive access to our prestigious Club Lounge."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ef5"
   },
-  {
-    "_id": {
-      "$oid": "66425822cd70a5e915988ef6"
+  "id": 14,
+  "room_title": "Seaside Bungalow",
+  "price_per_night": 350,
+  "room_size": "500 sqft",
+  "availability": 4,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/3e53f7e0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/46a9b979.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/bc5ecd98.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/ca36d859.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/ca36d859.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "special_offers": [
+    {
+      "offer": "romantic_couple_discount",
+      "value": 20
     },
-    "id": 15,
-    "room_title": "Safari Tent Experience",
-    "price_per_night": 200,
-    "room_size": "300 sqft",
-    "availability": 6,
-    "room_images": [
-      "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/aa785791.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/743bd88e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/19f1eb93.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-      "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/17291b8f.jpg?impolicy=resizecrop&rw=1200&ra=fit"
-    ],
-    "homeImg": "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/743bd88e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "special_offers": {
-      "guided_safari_excursion": 50,
-      "campfire_dinners": 30
+    {
+      "offer": "family_adventure_discount",
+      "value": 15
+    }
+  ],
+  "facilities": [
+    "Pool",
+    "Private Terrace",
+    "Fireplace",
+    "Cozy Sitting Area"
+  ],
+  "customer_ratings": 4.6,
+  "reviews": [],
+  "features": [
+    "Panoramic Sea Views",
+    "Private Terrace"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/4000000/3570000/3562000/3561936/46a9b979.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Embrace coastal living in our Seaside Bungalow, nestled along the pristine shores of the ocean. Listen to the soothing sound of the waves and feel the gentle ocean breeze as you unwind in this idyllic retreat."
+},
+{
+  "_id": {
+    "$oid": "66425822cd70a5e915988ef6"
+  },
+  "id": 15,
+  "room_title": "Safari Tent Experience",
+  "price_per_night": 200,
+  "room_size": "300 sqft",
+  "availability": 6,
+  "room_images": [
+    "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/aa785791.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/743bd88e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/19f1eb93.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/17291b8f.jpg?impolicy=resizecrop&rw=1200&ra=fit"
+  ],
+  "homeImg": "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/743bd88e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "special_offers": [
+    {
+      "offer": "guided_safari_excursion",
+      "value": 50
     },
-    "facilities": [
-      "Guided Safari Excursion",
-      "Campfire Dinners",
-      "Scenic Beauty",
-      "Nature Immersion"
-    ],
-    "customer_ratings": 4.7,
-    "review_count": 0,
-    "features": ["Panoramic Savanna Views", "Rustic Furnishings"],
-    "card_img": "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/19f1eb93.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-    "room_description": "Embark on a wild adventure with our Safari Tent Experience, where luxury meets the untamed wilderness. Immerse yourself in nature as you enjoy guided safari excursions, campfire dinners under the stars, and encounters with exotic wildlife."
-  }
-]
+    {
+      "offer": "campfire_dinners",
+      "value": 30
+    }
+  ],
+  "facilities": [
+    "Guided Safari Excursion",
+    "Campfire Dinners",
+    "Scenic Beauty",
+    "Nature Immersion"
+  ],
+  "customer_ratings": 4.7,
+  "reviews": [],
+  "features": [
+    "Panoramic Savanna Views",
+    "Rustic Furnishings"
+  ],
+  "card_img": "https://images.trvl-media.com/lodging/2000000/1160000/1158200/1158143/19f1eb93.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  "room_description": "Embark on a wild adventure with our Safari Tent Experience, where luxury meets the untamed wilderness. Immerse yourself in nature as you enjoy guided safari excursions, campfire dinners under the stars, and encounters with exotic wildlife."
+}]
