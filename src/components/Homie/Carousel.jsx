@@ -31,12 +31,12 @@ const Carousel = () => {
     },[]);
 
     return (
-        <div className='my-4 md:my-10 space-y-6 flex flex-col justify-center items-center text-center'>
-            <div className="px-[4%] md:px-[15%] space-y-3 flex flex-col justify-center items-center">
-                <h2 className='text-3xl font-jakarta font-bold'>Indulge in Unrivaled Luxury</h2>
-                <p className='font-source'>Escape to a realm of opulence and sophistication with our luxury hotel rooms. Immerse yourself in unparalleled comfort and elegance, where every detail is meticulously crafted to elevate your stay.</p>
+        <div className='md:my-10 lg:space-y-6 space-y-4 flex flex-col justify-center items-center text-center'>
+            <div className="px-[5%] md:px-[15%] space-y-3 flex flex-col justify-center items-center">
+                <h2 className='text-xl lg:text-3xl font-jakarta font-bold'>Indulge in Unrivaled Luxury</h2>
+                <p className='text-sm font-source'>Escape to a realm of opulence and sophistication with our luxury hotel rooms. Immerse yourself in unparalleled comfort and elegance, where every detail is meticulously crafted to elevate your stay.</p>
             </div>
-            <div className='h-[60vh] w-[85%] mx-auto'>
+            <div className='lg:h-[60vh] h-[100vh] w-[95%] lg:w-[85%] mx-auto'>
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
@@ -58,8 +58,8 @@ const Carousel = () => {
                         </SwiperSlide>))
                     }
                     <SwiperSlide>
-                        <div className="w-full h-full rounded-lg flex flex-row-reverse items-center justify-evenly">
-                            <div className="space-y-4 w-[40%]">
+                        <div className="w-full h-full rounded-lg flex flex-col md:flex-row-reverse items-center justify-evenly">
+                            <div className="w-full space-y-4 md:w-[40%]">
                                 <h2 className="font-montserrat text-[#151515cd] font-bold text-5xl">Modern King Room</h2>
                                 <h4 className="font-nunito text-[#15151590]">Experience luxury and comfort in our Modern King Room. Immerse yourself in contemporary design and upscale amenities for a truly unforgettable stay.</h4>
                                 <div className="py-6 flex flex-row justify-center items-center gap-4">
@@ -67,7 +67,7 @@ const Carousel = () => {
                                     <button className="btn btn-outline">Latest Allocation</button>
                                 </div>
                             </div>
-                            <img className="h-[50%] w-[40%] object-cover rounded-2xl" src="https://img.freepik.com/premium-photo/illuminated-electric-lamp-by-bed-home_1048944-2406546.jpg?w=996" alt="bannerImages" />
+                            <img className="md:h-[50%] md:w-[40%] object-cover rounded-2xl" src="https://img.freepik.com/premium-photo/illuminated-electric-lamp-by-bed-home_1048944-2406546.jpg?w=996" alt="bannerImages" />
                         </div>
                     </SwiperSlide>
                 </Swiper>

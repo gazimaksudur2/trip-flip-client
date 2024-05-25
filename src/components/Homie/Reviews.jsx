@@ -41,7 +41,7 @@ const Reviews = () => {
     // console.log(data && data?.length);
     return (
         <div>
-            <section className="relative lg:py-10 lg:w-[80%] mx-auto">
+            <section className="w-[95%] relative my-6 md:my-0 lg:py-10 lg:w-[80%] mx-auto">
                 <div className="lg:w-[60%] container mx-auto px-4">
                     <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
                         What clients saying
@@ -53,7 +53,7 @@ const Reviews = () => {
                     </div>
                     <p className="text-gray-700 font-normal font-source text-center mb-8">Discover why our customers love us! Read real reviews and testimonials from satisfied clients who have experienced our exceptional service and found their dream properties.</p>
                 </div>
-                <div className='w-full'>
+                <div className='w-full py-4 md:py-0 bg-blue-50 rounded-3xl'>
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
@@ -62,10 +62,10 @@ const Reviews = () => {
                         }}
                         loop={true}
                         modules={[Pagination]}
-                        className="mySwiper w-full h-[60vh] bg-white rounded-3xl"
+                        className="mySwiper w-full h-[85vh] md:h-[60vh]"
                     >
                         {
-                            data && data.slice(data?.length-6, data?.length)?.map(each => (<SwiperSlide key={each._id} className='relative bg-blue-50'>
+                            data && data.slice(data?.length-6, data?.length)?.map(each => (<SwiperSlide key={each._id} className='relative'>
                                 <ReviewTestimonial each={each} />
                             </SwiperSlide>))
                         }

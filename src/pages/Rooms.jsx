@@ -49,17 +49,17 @@ const Rooms = () => {
             <ScrollRestoration />
             <RoomHeader />
             <p className="text-center text-xl font-semibold py-2">Total Existing room is : {rooms.length}</p>
-            <div className="my-8 w-[80%] mx-auto flex justify-between items-center">
+            <div className="my-4 md:my-8 w-[95%] md:w-[80%] mx-auto flex flex-col md:flex-row justify-between md:items-center space-y-4">
                 <div className="flex justify-center items-center gap-0">
                     <input type="text" placeholder="Find Your Preferred Room.." className="input input-bordered w-full rounded-r-none" />
                     <button className="btn btn-primary rounded-l-none">Search</button>
                 </div>
-                <div className="w-[30%] flex justify-center items-center gap-4">
+                <div className="md:w-[30%] flex justify-center items-center gap-4">
                     <div className="flex justify-center items-center gap-1">
                         <MdFilterList size={20} className="font-semibold" />
                         <h4 className="font-medium">Filter By</h4>
                     </div>
-                    <select onChange={handleFilter} className="w-[40%] select select-info" name="price">
+                    <select onChange={handleFilter} className="w-[60%] md:w-[40%] select select-info" name="price">
                         <option disabled selected value={'all'}>Price</option>
                         <option value={'all'}>All</option>
                         <option value={'40-150'}>$40-$150</option>

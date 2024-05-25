@@ -89,7 +89,7 @@ const UpdateBooking = ({ booking, roomInfo, setShowUpdateModal }) => {
                     <div className="border-0 rounded-lg py-5 relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         <div className="flex items-start justify-between pt-4 px-4 pb-2 border-b border-solid border-blueGray-200 rounded-t">
                             <h3 className="font-semibold">
-                                Update Your Booked Room <span className="pl-4 text-3xl text-primary">{roomData?.room_title}</span>
+                                Update Your Booked Room<br/> <span className="md:pl-4 text-2xl md:text-3xl text-primary">{roomData?.room_title}</span>
                             </h3>
                             <button
                                 className="p-1 z-[1000] ml-auto border-0 text-black opacity-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"

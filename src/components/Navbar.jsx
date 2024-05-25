@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [show, setShow] = useState(false);
     const navigate = useNavigate();
 
     // console.log(user);
@@ -106,16 +107,16 @@ const Navbar = () => {
     return (
         <div className="">
             <section className="bg-gray-900">
-                <nav className="w-full px-10 py-6 mx-auto lg:flex lg:justify-between lg:items-center">
+                <nav className="w-full px-10 py-6 mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center">
                     <div className="flex items-center justify-between">
                         {title}
                         <div className="flex lg:hidden">
-                            <button type="button" className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <button type="button" onClick={() => setShow(!(show))} className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" className={show ? 'hidden' : 'w-6 h-6'} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
                                 </svg>
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className={show ? 'w-6 h-6' : 'hidden'} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
@@ -123,12 +124,22 @@ const Navbar = () => {
                     </div>
 
                     <div className='flex justify-center items-center'>
-                        <div className="absolute inset-x-0 z-20 w-[80%] flex justify-between items-center px-6 py-4 transition-all duration-300 ease-in-out shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
-                            <div className="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0 justify-center lg:justify-between items-center mr-8">
+                        <div className={show?"w-full bg-gray-900 inset-x-0 z-20 flex justify-between items-center px-6 py-4 transition-all duration-300 ease-in-out shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center":'hidden'}>
+                            <div className="w-full flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0 justify-center lg:justify-between items-center mr-8">
                                 {navLinks}
+                                <div className="flex justify-center py-5 lg:hidden drawer drawer-end">
+                                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                                    <div className="drawer-content flex justify-center items-center">
+                                        {user ? avatar : logs}
+                                    </div>
+                                    <div className="drawer-side z-30">
+                                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+                                        {sideBar}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="drawer drawer-end">
+                        <div className="hidden lg:flex drawer drawer-end">
                             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                             <div className="drawer-content flex justify-center items-center">
                                 {user ? avatar : logs}
