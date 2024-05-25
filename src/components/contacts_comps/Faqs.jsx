@@ -3,6 +3,7 @@ import FAQ from "./FAQ";
 
 const Faqs = () => {
     const [faqInfo, setFaqInfo] = useState([]);
+    const [tracker, setTracker] = useState();
 
     useEffect(()=>{
         fetch('faqInfo.json')
@@ -21,7 +22,7 @@ const Faqs = () => {
 
                     <div className="mt-8 space-y-8 lg:mt-12">
                         {
-                            faqInfo && faqInfo.map((faq, idx)=>(<FAQ key={idx} faq={faq}/>))
+                            faqInfo && faqInfo.map((faq, idx)=>(<FAQ key={idx} tracker={tracker} setTracker={setTracker} faq={faq}/>))
                         }
                     </div>
                 </div>
