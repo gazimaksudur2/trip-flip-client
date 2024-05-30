@@ -59,15 +59,15 @@ const Carousel = () => {
                     }
                     <SwiperSlide>
                         <div className="w-full h-full rounded-lg flex flex-col md:flex-row-reverse items-center justify-evenly">
-                            <div className="w-full space-y-4 md:w-[40%]">
-                                <h2 className="font-montserrat text-[#151515cd] font-bold text-5xl">Modern King Room</h2>
-                                <h4 className="font-nunito text-[#15151590]">Experience luxury and comfort in our Modern King Room. Immerse yourself in contemporary design and upscale amenities for a truly unforgettable stay.</h4>
+                            <div className="w-full space-y-1 md:space-y-4 md:w-[40%]">
+                                <h2 className="font-montserrat text-[#151515cd] font-bold text-2xl md:text-5xl">Modern King Room</h2>
+                                <h4 className="font-nunito text-[#15151590] text-sm">Experience luxury and comfort in our Modern King Room. Immerse yourself in contemporary design and upscale amenities for a truly unforgettable stay.</h4>
                                 <div className="py-6 flex flex-row justify-center items-center gap-4">
                                     <button className="btn btn-primary">Discover More</button>
                                     <button className="btn btn-outline">Latest Allocation</button>
                                 </div>
                             </div>
-                            <img className="md:h-[50%] md:w-[40%] object-cover rounded-2xl" src="https://img.freepik.com/premium-photo/illuminated-electric-lamp-by-bed-home_1048944-2406546.jpg?w=996" alt="bannerImages" />
+                            <img className="h-[50%] lg:w-[40%] object-cover rounded-2xl" src="https://img.freepik.com/premium-photo/illuminated-electric-lamp-by-bed-home_1048944-2406546.jpg?w=996" alt="bannerImages" />
                         </div>
                     </SwiperSlide>
                 </Swiper>

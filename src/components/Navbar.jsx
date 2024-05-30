@@ -31,7 +31,7 @@ const Navbar = () => {
         <h2 className='text-white font-jakarta font-semibold text-2xl'>TripFlip</h2>
     </div>)
 
-    const sideBar = (<aside className="flex flex-col w-[40%] md:w-[25%] h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+    const sideBar = (<aside className="flex flex-col w-[50%] md:w-[25%] h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
         {title}
         <div className="relative mt-6">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -124,7 +124,8 @@ const Navbar = () => {
                     </div>
 
                     <div className='flex justify-center items-center'>
-                        <div className={show ? "w-full bg-gray-900 inset-x-0 z-20 flex justify-between items-center px-6 py-4 transition-all duration-300 ease-in-out shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:hidden lg:items-center" : 'hidden'}>
+                        {
+                            show && (<div className={"w-full bg-gray-900 inset-x-0 z-20 flex justify-between items-center px-6 py-4 transition-all duration-300 ease-in-out shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:hidden lg:items-center"}>
                             <div className="w-full flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0 justify-center lg:justify-between items-center mr-8">
                                 {navLinks}
                                 <div className="flex justify-center py-5 lg:hidden drawer drawer-end">
@@ -138,21 +139,13 @@ const Navbar = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>)
+                        }
+                        
 
                         <div className={"w-full hidden bg-gray-900 inset-x-0 z-20 lg:flex justify-between items-center px-6 py-4 transition-all duration-300 ease-in-out shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:opacity-100 lg:translate-x-0"}>
                             <div className="w-full flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0 justify-center lg:justify-between items-center mr-8">
                                 {navLinks}
-                                <div className="flex justify-center py-5 lg:hidden drawer drawer-end">
-                                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-                                    <div className="drawer-content flex justify-center items-center">
-                                        {user ? avatar : logs}
-                                    </div>
-                                    <div className="drawer-side z-30">
-                                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                                        {sideBar}
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div className="hidden lg:flex drawer drawer-end">

@@ -62,7 +62,7 @@ const Reviews = () => {
                         }}
                         loop={true}
                         modules={[Pagination]}
-                        className="mySwiper w-full h-[85vh] md:h-[60vh]"
+                        className="mySwiper w-full h-[70vh] md:h-[60vh]"
                     >
                         {
                             data && data.slice(data?.length-6, data?.length)?.map(each => (<SwiperSlide key={each._id} className='relative'>

@@ -3,7 +3,7 @@ const FAQ = ({ faq, tracker, setTracker }) => {
     // console.log(showAble);
     return (
         <div>
-            <div className="p-8 bg-gray-100 rounded-lg">
+            <div className="md:p-8 p-3 bg-gray-100 rounded-lg">
                 <button className="flex items-center justify-between w-full">
                     <h1 className="font-semibold text-gray-700">{faq.question}</h1>
 

@@ -1,14 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { VscFeedback } from 'react-icons/vsc';
+import FeedBack from './FeedBack/FeedBack';
 
 const Footer = () => {
     const { user } = useContext(AuthContext);
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
             <footer className="bg-white dark:bg-gray-900">
-                <div className="container px-6 py-8 mx-auto">
+                <div className="relative container px-6 py-8 mx-auto">
                     <div className="flex flex-col items-center text-center">
                         <Link to={'/'}>
                             <div className='flex justify-center items-center gap-3'>
@@ -26,6 +29,19 @@ const Footer = () => {
                         </div>
 
                     </div>
+
+                    <button
+                        className="ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={() => setShowModal(true)}
+                    >
+                        <VscFeedback className='text-gray-300 absolute right-[40px] top-[40px] hover:scale-100 scale-110 active:scale-90' size={30} />
+                    </button>
+                    {showModal ? (
+                        <>
+                            <FeedBack setShowModal={setShowModal} />
+                        </>
+                    ) : null}
 
                     <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
