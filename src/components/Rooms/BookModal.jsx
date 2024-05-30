@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import Footer from "../Footer";
 import Swal from "sweetalert2";
 
 const BookModal = ({ setShowBookModal, special_offers, fare, roomId }) => {

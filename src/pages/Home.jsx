@@ -5,7 +5,7 @@ import FeaturedRooms from '../components/Homie/FeaturedRooms';
 import HotelLocations from '../components/Homie/HotelLocations';
 import NewsLetter from '../components/Homie/NewsLetter';
 import Reviews from '../components/Homie/Reviews';
-import YoutubeEmbed from '../components/Homie/YoutubeEmbed';
+// import YoutubeEmbed from '../components/Homie/YoutubeEmbed';
 
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
             <ScrollRestoration/>
             <BannerTop/>
             <Carousel/>
-            <YoutubeEmbed/>
+            {/* <YoutubeEmbed/> */}
             <FeaturedRooms/>
             <Reviews/>
             <HotelLocations/>
