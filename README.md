@@ -14,3 +14,39 @@
 4. **Booking Management:** Users can edit their booking information until the check-in date.
 5. **Booking Cancellation:** Users can cancel a booking before the check-in date.
 6. **Post-Stay Review:** After checking out, users can review their experience, which will be displayed on the home page and the room's page.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js installed on your machine
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/gazimaksudur2/trip-flip-client.git
+   cd trip-flip-client
+
+2. Install Dependencies:
+   ```bash
+   npm install
+
+3. Set Up Firebase Authentication
+   Create a .env file in the root directory of the project.
+   Add the following environment variables to the .env file, replacing placeholders (your_api_key, your_auth_domain, etc.) with your Firebase project's actual configuration:
+   ```bash
+   VITE_APIKEY=your_api_key
+   VITE_AUTHDOMAIN=your_authdomain
+   VITE_PROJECTID=your_projectID
+   VITE_STORAGEBUCKET=your_storagebucket
+   VITE_MESSAGINGSENDERID=your_messageingsenderID
+   VITE_APPID=your_appID
+   
+4. Running the Project:
+   ```bash
+   npm run dev
+
+5. open your localhost on your browser:
+   ```bash
+   http://localhost:5173/
