@@ -1,20 +1,22 @@
-Assigned Assignment Variant is: assignment_category_0004
+# Trip_Flip: Hotel Management Web Application
 
-Client side git Private repo: https://github.com/Porgramming-Hero-web-course/b9a11-client-side-gazimaksudur2
-Server side git Private repo: https://github.com/Porgramming-Hero-web-course/b9a11-server-side-gazimaksudur2
+### Project Details
+- **Server side git repo:** [Server Side Repository](https://github.com/gazimaksudur2/elevateex-server)
+- **Live server site URL:** [Trip_Flip Server](https://elevate-dusky-nine.vercel.app/)
 
-live site url: https://trip-flip.web.app
+---
 
-Website title: Trip_Flip
+## 🌟 Features
 
-Some bullet points of features which are implemented in this project
-1. This is a hotel management web application which provides variety of services for the travelers.
-2. One can have an experience to know about the hotel fare and available services over the world.
-3. In this application one can create account with his credentials or using existing google or github account.
-4. After signing in he will be able to book a room of hotel as his choice.
-5. After booking with proper information he will be able to edit his booking info till check in date appears.
-6. Also he will able to cancel a booking before the checkIn date.
-7. After checking Out of the hotel he will be able to review his experience of the service in a post which will show in the home page along side the that rooms page.
+1. **Comprehensive Hotel Management:** Provides a variety of services for travelers, offering a global overview of hotel fares and available services.
+2. **User Authentication:** Users can create an account using their credentials, or sign in with Google or GitHub accounts.
+3. **Room Booking:** After signing in, users can book a hotel room of their choice.
+4. **Booking Management:** Users can edit their booking information until the check-in date.
+5. **Booking Cancellation:** Users can cancel a booking before the check-in date.
+6. **Post-Stay Review:** After checking out, users can review their experience, which will be displayed on the home page and the room's page.
 
-Used react packages for beautification and more: 
-1.
+---
+
+## 📝 Description
+
+Trip_Flip is a hotel management web application designed to provide travelers with a seamless experience in exploring and booking hotel services worldwide. Users can sign up, book rooms, manage their bookings, and share their experiences, all through a user-friendly interface.
