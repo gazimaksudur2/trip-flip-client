@@ -1,6 +1,6 @@
 # Trip_Flip: Hotel Management Web Application
 
-### Project Details
+### Server Side Project Details
 - **Server side git repo:** [Server Side Repository](https://github.com/gazimaksudur2/trip-flip-server)
 - **Live server site URL:** [Trip_Flip Server](https://server-seven-gamma-70.vercel.app/)
 
