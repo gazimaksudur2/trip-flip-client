@@ -14,9 +14,3 @@
 4. **Booking Management:** Users can edit their booking information until the check-in date.
 5. **Booking Cancellation:** Users can cancel a booking before the check-in date.
 6. **Post-Stay Review:** After checking out, users can review their experience, which will be displayed on the home page and the room's page.
-
----
-
-## 📝 Description
-
-Trip_Flip is a hotel management web application designed to provide travelers with a seamless experience in exploring and booking hotel services worldwide. Users can sign up, book rooms, manage their bookings, and share their experiences, all through a user-friendly interface.
