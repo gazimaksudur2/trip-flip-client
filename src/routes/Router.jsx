@@ -13,8 +13,6 @@ import About from '../pages/About';
 import SingleRoom from '../components/Rooms/SingleRoom';
 import PrivateRoute from './PrivateRoute';
 
-// const { user } = useContext(AuthContext);
-
 const Router = createBrowserRouter([
     {
         path: '/',
@@ -40,13 +38,12 @@ const Router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About/>,
-            }
+            },
+            {
+                path: '/singleroom/:id',
+                element: <PrivateRoute><SingleRoom/></PrivateRoute>,
+            },
         ]
-    },
-    {
-        path: '/singleroom/:id',
-        element: <PrivateRoute><SingleRoom/></PrivateRoute>,
-        // loader: ({params})=> axios.get(`https://server-seven-gamma-70.vercel.app/rooms/${params.id}`, { withCredentials: true})
     },
     {
         path: '/authenticate',

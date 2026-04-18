@@ -1,34 +1,33 @@
 import { useEffect, useState } from "react";
 import FAQ from "./FAQ";
+import SectionHeading from "../ui/SectionHeading";
 
 const Faqs = () => {
-    const [faqInfo, setFaqInfo] = useState([]);
-    const [tracker, setTracker] = useState();
+  const [faqInfo, setFaqInfo] = useState([]);
+  const [openIndex, setOpenIndex] = useState(-1);
 
-    useEffect(()=>{
-        fetch('faqInfo.json')
-        .then(res=>res.json())
-        .then(data=>{
-            setFaqInfo(data);
-        })
-    },[]);
-    // console.log(faqInfo);
+  useEffect(() => {
+    fetch('faqInfo.json')
+      .then(res => res.json())
+      .then(data => setFaqInfo(data))
+      .catch(() => {});
+  }, []);
 
-    return (
-        <div>
-            <section className="w-[96%] md:w-[90%] mx-auto my-3">
-                <div className="container px-2 md:px-6 py-4 md:py-12 mx-auto">
-                    <h1 className="text-center text-2xl font-semibold text-gray-800 lg:text-3xl">Frequently asked questions</h1>
-
-                    <div className="mt-8 space-y-4 md:space-y-8 lg:mt-12">
-                        {
-                            faqInfo && faqInfo.map((faq, idx)=>(<FAQ key={idx} tracker={tracker} setTracker={setTracker} faq={faq}/>))
-                        }
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+  return (
+    <section>
+      <SectionHeading title="Frequently Asked Questions" className="mb-8" />
+      <div className="max-w-3xl mx-auto space-y-3">
+        {faqInfo.map((faq, idx) => (
+          <FAQ
+            key={idx}
+            faq={faq}
+            isOpen={openIndex === idx}
+            onToggle={() => setOpenIndex(openIndex === idx ? -1 : idx)}
+          />
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Faqs;

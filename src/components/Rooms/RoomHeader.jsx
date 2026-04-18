@@ -1,12 +1,21 @@
+import { Link } from 'react-router-dom';
+import { FiChevronRight } from 'react-icons/fi';
+import SectionHeading from '../ui/SectionHeading';
+
 const RoomHeader = () => {
-    return (
-        <div className='lg:w-[70%] w-[90%] mx-auto mb-3 lg:mb-10 flex flex-col justify-center items-center gap-2'>
-            <div className="px-[4%] md:px-[15%] space-y-3 flex flex-col justify-center items-center text-center">
-                <h2 className='text-3xl font-jakarta font-bold'>Explore Our Branch Locations</h2>
-                <p className='font-source'>Embark on a journey with our hotel branch locations, where luxury meets adventure and every stay is a story to cherish. Experience comfort and our global network wherever you travel.</p>
-            </div>
-        </div>
-    );
+  return (
+    <div className="max-w-6xl mx-auto px-4 mb-8">
+      <nav className="flex items-center gap-1 text-sm text-gray-500 mb-6">
+        <Link to="/" className="hover:text-brand-500 transition-colors">Home</Link>
+        <FiChevronRight size={14} />
+        <span className="text-gray-800 font-medium">Rooms</span>
+      </nav>
+      <SectionHeading
+        title="Explore Our Rooms"
+        subtitle="Find the perfect room for your stay. Browse our selection of luxury accommodations and book your dream getaway."
+      />
+    </div>
+  );
 };
 
 export default RoomHeader;

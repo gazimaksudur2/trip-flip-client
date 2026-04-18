@@ -1,80 +1,67 @@
+import { motion } from 'framer-motion';
+import { FiDroplet, FiStar, FiUsers } from 'react-icons/fi';
+import SectionHeading from '../ui/SectionHeading';
+
+const FEATURES = [
+  {
+    icon: FiDroplet,
+    title: 'Elegant Spa Retreat',
+    desc: 'Immerse yourself in a world of serenity and luxury at our elegant spa, offering a diverse range of indulgent treatments and holistic therapies.',
+  },
+  {
+    icon: FiStar,
+    title: 'Gourmet Dining',
+    desc: 'Indulge in a culinary journey of exquisite flavors and culinary artistry, where every dish is meticulously crafted by world-renowned chefs.',
+  },
+  {
+    icon: FiUsers,
+    title: 'Exclusive Concierge',
+    desc: 'Elevate your stay with our exclusive concierge services, providing personalized assistance and bespoke experiences tailored to your preferences.',
+  },
+];
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const Features = () => {
-    return (
-        <div>
-            <section className="bg-white -900">
-                <div className="container px-6 py-10 mx-auto">
-                    <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl ">explore our<br/>Luxurious <span className="underline decoration-blue-500">Amenities</span></h1>
+  return (
+    <section>
+      <SectionHeading
+        title="Luxurious Amenities"
+        subtitle="Discover Our World-Class Amenities: from rejuvenating spa treatments to state-of-the-art fitness centers."
+        className="mb-10"
+      />
 
-                    <p className="mt-4 text-gray-500 xl:mt-6 -300">
-                    Discover Our World-Class Amenities: Immerse yourself in luxury and convenience with our extensive range of hotel facilities. From rejuvenating spa treatments to state-of-the-art fitness centers, there is something for everyone to enjoy during their stay.
-                    </p>
-
-                    <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-                        <div className="p-8 space-y-3 border-2 border-blue-400 -300 rounded-xl">
-                            <span className="inline-block text-blue-500 -400">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-                                </svg>
-                            </span>
-
-                            <h1 className="text-xl font-semibold text-gray-700 capitalize ">Elegant Spa Retreat</h1>
-
-                            <p className="text-gray-500 -300">
-                            Immerse yourself in a world of serenity and luxury at our elegant spa, offering a diverse range of indulgent treatments and holistic therapies for complete relaxation and rejuvenation.
-                            </p>
-
-                            <a className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 -500  hover:underline hover:text-blue-600 -blue-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div className="p-8 space-y-3 border-2 border-blue-400 -300 rounded-xl">
-                            <span className="inline-block text-blue-500 -400">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                                </svg>
-                            </span>
-
-                            <h1 className="text-xl font-semibold text-gray-700 capitalize ">Gourmet Dining Experience</h1>
-
-                            <p className="text-gray-500 -300">
-                            Indulge in a culinary journey of exquisite flavors and culinary artistry, where every dish is meticulously crafted by our world-renowned chefs using the finest ingredients sourced locally and globally.
-                            </p>
-
-                            <a className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 -500  hover:underline hover:text-blue-600 -blue-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div className="p-8 space-y-3 border-2 border-blue-400 -300 rounded-xl">
-                            <span className="inline-block text-blue-500 -400">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                                </svg>
-                            </span>
-
-                            <h1 className="text-xl font-semibold text-gray-700 capitalize ">Exclusive Concierge Services</h1>
-
-                            <p className="text-gray-500 -300">
-                            Elevate your stay with our exclusive concierge services, providing personalized assistance and bespoke experiences tailored to your preferences, ensuring a seamless and unforgettable stay from arrival to departure.
-                            </p>
-
-                            <a className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 -500  hover:underline hover:text-blue-600 -blue-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-50px" }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+      >
+        {FEATURES.map((feat) => (
+          <motion.div
+            key={feat.title}
+            variants={item}
+            className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-brand-400 hover:shadow-lg transition-all duration-300 group"
+          >
+            <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-colors mb-4">
+              <feat.icon size={22} />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2 font-jakarta">{feat.title}</h3>
+            <p className="text-sm text-gray-500 leading-relaxed">{feat.desc}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
 };
 
 export default Features;

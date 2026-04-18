@@ -17,10 +17,6 @@ import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 const MySlider = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-    const handleThumbSwiper = e =>{
-        console.log(e);
-    }
-
   return (
     <div className='w-[90%] mx-auto h-[70vh]'>
       <Swiper
@@ -67,7 +63,7 @@ const MySlider = () => {
         </SwiperSlide>
       </Swiper>
       <Swiper
-        onSwiper={handleThumbSwiper}
+        onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
         slidesPerView={4}

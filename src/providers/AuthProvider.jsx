@@ -1,8 +1,8 @@
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import app from './FirebaseConfig';
 import { GoogleAuthProvider, TwitterAuthProvider } from 'firebase/auth';
-import axios from 'axios';
+import { api } from '../api/client';
 
 const auth = getAuth(app);
 export const AuthContext = createContext();
@@ -48,39 +48,32 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, twitterProvider);
     }
 
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email);
+    }
+
     const logOut = ()=>{
         return signOut(auth);
     }
 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, curUser=>{
-            const loggedUser = {email: user?.email || curUser?.email};
-            setLoading(false);
-            // console.log("from observer: ", loggedUser);
-            if(curUser){
-                axios.post('https://server-seven-gamma-70.vercel.app/jwt', loggedUser, {withCredentials: true})
-                .then(res=> {
-                    // console.log(res.data);
-                })
-                .catch(error=> {
-                    // console.log(error);
-                })
-            }else{
-                axios.post('https://server-seven-gamma-70.vercel.app/logout', loggedUser, {withCredentials: true})
-                .then(res=> {
-                    // console.log(res.data);
-                })
-                .catch(error=>{
-                    // console.log(error);
-                })
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, async (curUser) => {
+            try {
+                if (curUser) {
+                    await api.post('/jwt', { email: curUser.email });
+                } else {
+                    await api.post('/logout', {});
+                }
+            } catch {
+                /* cookie / network issues should not block auth state */
+            } finally {
+                setUser(curUser);
+                setLoading(false);
             }
-            setUser(curUser);
-        })
+        });
 
-        return ()=>{
-            unsubscribe()
-        };
-    },[]);
+        return () => unsubscribe();
+    }, []);
 
     const authInfo = {
         createUser,
@@ -92,6 +85,7 @@ const AuthProvider = ({children}) => {
         googleSignIn,
         githubSignIn,
         twitterSignIn,
+        resetPassword,
         logOut
     }
 

@@ -1,91 +1,61 @@
-import { Map, Marker } from "pigeon-maps"
-import { osm } from 'pigeon-maps/providers'
+import { useState } from 'react';
+import { Map, Marker } from "pigeon-maps";
+import { osm } from 'pigeon-maps/providers';
+import { FiMapPin } from 'react-icons/fi';
+import SectionHeading from '../ui/SectionHeading';
+
+const LOCATIONS = [
+  { name: 'Frankfurt, Germany', coords: [50.1109, 8.6821] },
+  { name: 'Shenzhen, China', coords: [22.5431, 114.0579] },
+  { name: 'Tokyo, Japan', coords: [35.6762, 139.6503] },
+  { name: 'Houston, USA', coords: [29.7604, -95.3698] },
+  { name: 'Seoul, South Korea', coords: [37.5665, 126.9780] },
+  { name: 'Mumbai, India', coords: [19.0760, 72.8777] },
+];
 
 const HotelLocations = () => {
+  const [openIndex, setOpenIndex] = useState(0);
 
-    return (
-        <>
-            <div className='lg:w-[70%] w-[90%] mx-auto mb-3 lg:mb-10 flex flex-col justify-center items-center gap-2'>
-                <div className="px-[4%] md:px-[15%] py-4 space-y-3 flex flex-col justify-center items-center text-center">
-                    <h2 className='text-3xl font-jakarta font-bold'>Explore Our Branch Locations</h2>
-                    <p className='font-source'>Embark on a journey with our hotel branch locations, where luxury meets adventure and every stay is a story to cherish. Experience comfort and our global network wherever you travel.</p>
+  return (
+    <section className="py-12 lg:py-16">
+      <SectionHeading
+        title="Explore Our Branch Locations"
+        subtitle="Embark on a journey with our hotel branch locations, where luxury meets adventure and every stay is a story to cherish."
+        className="mb-8 px-4"
+      />
+
+      <div className="max-w-3xl mx-auto px-4 space-y-3">
+        {LOCATIONS.map((loc, idx) => (
+          <div key={loc.name} className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+            <button
+              onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
+              className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span className="flex items-center gap-2.5 font-medium text-gray-800 font-radio">
+                <FiMapPin className="text-brand-500" size={18} />
+                {loc.name}
+              </span>
+              <svg
+                className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${openIndex === idx ? 'rotate-180' : ''}`}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {openIndex === idx && (
+              <div className="px-3 pb-3">
+                <div className="rounded-lg overflow-hidden">
+                  <Map provider={osm} height={280} defaultCenter={loc.coords} defaultZoom={11}>
+                    <Marker width={50} anchor={loc.coords} />
+                  </Map>
                 </div>
-                <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" defaultChecked />
-                    <div className="collapse-title text-xl font-medium font-radio">
-                        Frankfurt, Germany
-                    </div>
-                    <div className="collapse-content w-full p-3">
-                        <Map provider={osm} height={300} defaultCenter={[50.1109, 8.6821]} defaultZoom={11}>
-                            <Marker width={50} anchor={[50.1109, 8.6821]} />
-                        </Map>
-                    </div>
-                </div>
-                <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" defaultChecked />
-                    <div className="collapse-title text-xl font-medium font-radio">
-                        Shenzhen, China
-                    </div>
-                    <div className="collapse-content w-full p-3">                        
-                        <Map provider={osm} height={300} defaultCenter={[22.5431, 114.0579]} defaultZoom={11}>
-                            <Marker width={50} anchor={[22.5431, 114.0579]} />
-                        </Map>
-                    </div>
-                </div>
-                <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" defaultChecked />
-                    <div className="collapse-title text-xl font-medium font-radio">
-                        Tokyo, Japan
-                    </div>
-                    <div className="collapse-content w-full p-3">                        
-                        <Map provider={osm} height={300} defaultCenter={[35.6762, 139.6503]} defaultZoom={11}>
-                            <Marker width={50} anchor={[35.6762, 139.6503]} />
-                        </Map>
-                    </div>
-                </div>
-                <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" defaultChecked />
-                    <div className="collapse-title text-xl font-medium font-radio">
-                        Houston, USA
-                    </div>
-                    <div className="collapse-content w-full p-3">                        
-                        <Map provider={osm} height={300} defaultCenter={[29.7604, -95.3698]} defaultZoom={11}>
-                            <Marker width={50} anchor={[29.7604, -95.3698]} />
-                        </Map>
-                    </div>
-                </div>
-                <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" defaultChecked />
-                    <div className="collapse-title text-xl font-medium font-radio">
-                        Seoul, South Korea
-                    </div>
-                    <div className="collapse-content w-full p-3">                        
-                        <Map provider={osm} height={300} defaultCenter={[37.5665, 126.9780]} defaultZoom={11}>
-                            <Marker width={50} anchor={[37.5665, 126.9780]} />
-                        </Map>
-                    </div>
-                </div>
-                <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" defaultChecked />
-                    <div className="collapse-title text-xl font-medium font-radio">
-                        Mumbai, India
-                    </div>
-                    <div className="collapse-content w-full p-3">                        
-                        <Map provider={osm} height={300} defaultCenter={[19.0760, 72.8777]} defaultZoom={11}>
-                            <Marker width={50} anchor={[19.0760, 72.8777]} />
-                        </Map>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default HotelLocations;
-
-// Eiffel Tower, Paris, France
-// Machu Picchu, Peru
-// Great Wall of China, China
-// Taj Mahal, Agra, India
-// Statue of Liberty, New York City, USA
-// Sydney Opera House, Sydney, Australia

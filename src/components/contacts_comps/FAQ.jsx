@@ -1,43 +1,37 @@
-const FAQ = ({ faq, tracker, setTracker }) => {
-    const showAble = (tracker===faq.answer.slice(0,20));
-    // console.log(showAble);
-    return (
-        <div>
-            <div className="md:p-8 p-3 bg-gray-100 rounded-lg">
-                <button className="flex items-center justify-between w-full">
-                    <h1 className="font-semibold text-gray-700">{faq.question}</h1>
+import { AnimatePresence, motion } from 'framer-motion';
+import { FiPlus, FiMinus } from 'react-icons/fi';
 
-                    <div>
-                        <span className="text-gray-400">
-                            <svg onClick={()=>setTracker('')} xmlns="http://www.w3.org/2000/svg" className={showAble?"w-6 h-6 bg-gray-300 rounded-full":'hidden'} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 12H6" />
-                            </svg>
-                        </span>
-                        <span className="text-white rounded-full">
-                            <svg onClick={()=>setTracker(faq.answer.slice(0,20))} xmlns="http://www.w3.org/2000/svg" className={showAble?'hidden':"w-6 h-6 bg-blue-500 rounded-full"} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
-                        </span>
-                    </div>
-                </button>
-
-                <p className={showAble?"mt-6 text-sm text-gray-500":'hidden'}>
-                    {faq.answer}
-                </p>
-            </div>
-            {/* <div className="p-8 bg-gray-100 rounded-lg">
-                <button className="flex items-center justify-between w-full">
-                    <h1 className="font-semibold text-gray-700">Is the cost of the appoinment covered by private health insurance?</h1>
-
-
-                </button>
-
-                <p className="mt-6 text-sm text-gray-500">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
-                </p>
-            </div> */}
-        </div>
-    );
+const FAQ = ({ faq, isOpen, onToggle }) => {
+  return (
+    <div className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-gray-300 transition-colors">
+      <button
+        type="button"
+        className="flex items-center justify-between w-full px-5 py-4 text-left"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+      >
+        <span className="text-sm font-medium text-gray-800">{faq.question}</span>
+        <span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-gray-200 text-gray-600' : 'bg-brand-500 text-white'}`}>
+          {isOpen ? <FiMinus size={14} /> : <FiPlus size={14} />}
+        </span>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <p className="px-5 pb-4 text-sm text-gray-500 leading-relaxed">
+              {faq.answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export default FAQ;

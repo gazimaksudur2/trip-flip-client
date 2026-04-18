@@ -1,20 +1,24 @@
-const FeatureRoomCard = ({content}) => {
-    return (
-        <div className="">
-            <div className="block rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white text-surface">
-                <div className="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img className="rounded-t-lg w-full h-[20rem]" src={content.url} alt="" />
-                </div>
-                <div className="p-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-b-lg">
-                    <h5 className="mb-2 text-2xl font-semibold text-[#151515] leading-tight">{content.title}</h5>
-                    <p className="mb-4 w-[80%] font-medium text-[#151515bc] mx-auto">{content.description}</p>
-                    <p className="text-base text-surface/75 dark:text-neutral-300">
-                        <small className="text-gray-800">Last updated 20 mins ago</small>
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
+const FeatureRoomCard = ({ content }) => {
+  return (
+    <div className="rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div className="relative overflow-hidden">
+        <img
+          className="w-full h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+          src={content.url}
+          alt={content.title}
+        />
+        {content.price && (
+          <span className="absolute top-4 right-4 bg-brand-500 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-lg">
+            ${content.price} / night
+          </span>
+        )}
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-semibold text-gray-800 mb-1 font-jakarta">{content.title}</h3>
+        <p className="text-sm text-gray-500 leading-relaxed">{content.description}</p>
+      </div>
+    </div>
+  );
 };
 
 export default FeatureRoomCard;

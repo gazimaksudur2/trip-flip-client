@@ -38,7 +38,7 @@ const VisitStores = () => {
                         </div>
 
                         <div>
-                            <h2 className="font-medium text-gray-700 -200">Sweden</h2>
+                            <h2 className="font-medium text-gray-700">Sweden</h2>
                             <p className="mt-2 text-gray-500">100 Flinders Street Melbourne VIC 3000 AU</p>
                         </div>
                     </div>

@@ -1,84 +1,58 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination } from 'swiper/modules';
-import { useEffect, useState } from 'react';
-// import Slider from './Slider';
-// import ReviewCard from './ReviewCard';
+import { Pagination, Navigation } from 'swiper/modules';
 import ReviewTestimonial from './ReviewTestimonial';
-import axios from 'axios';
+import SectionHeading from '../ui/SectionHeading';
+import Spinner from '../ui/Spinner';
+import { useAllReviewsQuery } from '../../hooks/useReviewQueries';
 
 const Reviews = () => {
-    const [data, setData] = useState();
-    // const [showdata, setshowData] = useState([]);
+  const { data, isLoading, isError } = useAllReviewsQuery();
+  const slides = data?.length ? data.slice(Math.max(0, data.length - 6)) : [];
 
-    useEffect(() => {
-        axios.get('https://server-seven-gamma-70.vercel.app/reviews')
-            .then(res => {
-                // console.log(res.data);
-                setData(res.data);
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
-    }, []);
+  return (
+    <section className="py-12 lg:py-16">
+      <SectionHeading
+        title="What Clients Are Saying"
+        subtitle="Discover why our customers love us! Read real reviews and testimonials from satisfied clients who have experienced our exceptional service."
+        className="mb-8 px-4"
+      />
 
-    // useEffect(() => {
-    //     if (data) {
-    //         setshowData([]);
-    //         const value = parseInt(Math.random() * data?.length);
-    //         for (let x = 0; x < 6 ; x++) {
-    //             setshowData([data[(value + x)%data?.length], ...showdata]);
-    //             console.log("hello world!!");
-    //         }
-    //         console.log(showdata, value);
-    //     }
-    // }, [data]);
-
-    // console.log(data && data?.length);
-    return (
-        <div>
-            <section className="w-[95%] relative my-6 md:my-0 lg:py-10 lg:w-[80%] mx-auto">
-                <div className="lg:w-[60%] container mx-auto px-4">
-                    <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
-                        What clients saying
-                    </h1>
-                    <div className="flex justify-center mx-auto mt-2 mb-5">
-                        <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-                        <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-                        <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
-                    </div>
-                    <p className="text-gray-700 font-normal font-source text-center mb-8">Discover why our customers love us! Read real reviews and testimonials from satisfied clients who have experienced our exceptional service and found their dream properties.</p>
-                </div>
-                <div className='w-full py-4 md:py-0 bg-blue-50 rounded-3xl'>
-                    <Swiper
-                        spaceBetween={30}
-                        centeredSlides={true}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        loop={true}
-                        modules={[Pagination]}
-                        className="mySwiper w-full h-[70vh] md:h-[60vh]"
-                    >
-                        {
-                            data && data.slice(data?.length-6, data?.length)?.map(each => (<SwiperSlide key={each._id} className='relative'>
-                                <ReviewTestimonial each={each} />
-                            </SwiperSlide>))
-                        }
-                    </Swiper>
-                </div>
-                {/* <div className='w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10'>
-                {
-                    data && data.map((dat, idx) => (<ReviewCard key={idx} data={dat} />))
-                }
-            </div> */}
-            </section >
+      {isLoading && (
+        <div className="flex justify-center py-12">
+          <Spinner size="lg" />
         </div>
-    );
+      )}
+      {isError && (
+        <p className="text-center text-error">Reviews could not be loaded.</p>
+      )}
+
+      {!isLoading && !isError && slides.length > 0 && (
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="bg-brand-50 rounded-3xl py-8 px-4">
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              pagination={{ clickable: true }}
+              navigation={true}
+              loop={slides.length > 1}
+              modules={[Pagination, Navigation]}
+              className="w-full"
+              style={{ minHeight: '300px' }}
+            >
+              {slides.map((each) => (
+                <SwiperSlide key={each._id}>
+                  <ReviewTestimonial each={each} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      )}
+    </section>
+  );
 };
 
 export default Reviews;

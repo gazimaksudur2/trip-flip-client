@@ -12,14 +12,8 @@ import 'swiper/css/thumbs';
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
-import React from 'react';
-
 const SwiperSlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
-    const handleThumbSwiper = e =>{
-        console.log(e);
-    }
 
   return (
     <div className='relative h-[60vh] w-[85%] mx-auto'>
@@ -65,7 +59,7 @@ const SwiperSlider = () => {
       </Swiper>
       <div className='absolute z-20 w-[40%] p-4 bottom-[5%] right-[30%] backdrop-blur-3xl rounded-2xl'>
         <Swiper
-          onSwiper={handleThumbSwiper}
+          onSwiper={setThumbsSwiper}
           loop={true}
           spaceBetween={10}
           slidesPerView={4}

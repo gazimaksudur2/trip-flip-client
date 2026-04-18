@@ -4,5 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* when we will have access to our assignment repository to make it public */
+  body {
+    @apply font-source text-gray-800 bg-base-100;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-gray-900/80 backdrop-blur-md border-b border-white/10;
+  }
+}

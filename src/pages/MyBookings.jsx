@@ -1,16 +1,15 @@
-// import SwiperSlider from '../components/Rooms/SwiperSlider';
 import { ScrollRestoration } from 'react-router-dom';
 import BookingTable from '../components/myBookings/BookingTable';
+import SectionHeading from '../components/ui/SectionHeading';
 
 const MyBookings = () => {
-    return (
-        <div>
-            <ScrollRestoration/>
-            <div className='w-[85%] mx-auto py-8'>
-                <BookingTable />
-            </div>
-        </div>
-    );
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <ScrollRestoration />
+      <SectionHeading title="My Bookings" className="mb-8" />
+      <BookingTable />
+    </div>
+  );
 };
 
 export default MyBookings;
